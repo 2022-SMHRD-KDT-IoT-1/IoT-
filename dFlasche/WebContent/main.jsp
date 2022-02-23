@@ -29,14 +29,14 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="index.html" class="logo">Massively</a>
+			<a href="main.jsp" class="logo">d Flasche</a>
 		</header>
 
 		<!-- Nav -->
 		<nav id="nav">
 			<ul class="links">
-				<li class="active"><a href="index.html">This is Massively</a></li>
-				<li><a href="generic.html">Generic Page</a></li>
+				<li class="active"><a href="main.jsp">d Flasche</a></li>
+				<li><a href="generic2.html">부향률 페이지</a></li>
 				<li><a href="elements.html">Elements Reference</a></li>
 				<li><a href="#">Community</a></li>
 				<li><a href="Login.jsp">Login & Sign Up</a></li>
