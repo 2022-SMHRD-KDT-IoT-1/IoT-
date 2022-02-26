@@ -43,15 +43,48 @@ public class MemberDAO {
 			return uvo;
 	}
 
-	public int nickup(MemberVO vo) {
-			
-			// SQL연결을 빌려오는 부분
-			SqlSession session = sqlSessionFactory.openSession(true);
-			System.out.println(vo.getM_nick());
-			int cnt = session.update("NickUp", vo);
-			session.close();
-			return cnt;
-		}
+//	public int nickup(MemberVO vo) {
+//			
+//			// SQL연결을 빌려오는 부분
+//			SqlSession session = sqlSessionFactory.openSession(true);
+//			int cnt = session.update("NickUp", vo);
+//			session.close();
+//			return cnt;
+//		}
+//	
+//	public int pwup(MemberVO vo) {
+//		
+//		// SQL연결을 빌려오는 부분
+//		SqlSession session = sqlSessionFactory.openSession(true);
+//		int cnt = session.update("PwUp", vo);
+//		session.close();
+//		return cnt;
+//	}
+//	
+//	public int phoneup(MemberVO vo) {
+//		
+//		// SQL연결을 빌려오는 부분
+//		SqlSession session = sqlSessionFactory.openSession(true);
+//		int cnt = session.update("PhoneUp", vo);
+//		session.close();
+//		return cnt;
+//	}
+//	
+//	public int addrup(MemberVO vo) {
+//		
+//		// SQL연결을 빌려오는 부분
+//		SqlSession session = sqlSessionFactory.openSession(true);
+//		int cnt = session.update("AddrUp", vo);
+//		session.close();
+//		return cnt;
+//	}
+	
+	public int update(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.update("UpdateService", vo);
+		session.close();
+		return cnt;
+	}
 
 	public int delete(String m_id) {
 
@@ -60,6 +93,15 @@ public class MemberDAO {
 		session.close();
 		return cnt;
 	}
+
+	public int pwUp(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.update("PwUp", vo);
+		session.close();
+		return cnt;
+	}
+
+
 
 	}
 

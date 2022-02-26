@@ -28,11 +28,10 @@ public class MemberVO {
 		this.m_pw = m_pw;
 	}
 	
-	public MemberVO(String m_id, String m_pw, String m_addr, String m_phone, String m_nick) {
+	public MemberVO(String m_id,  String m_phone, String m_addr, String m_nick) {
 		this.m_id = m_id;
-		this.m_pw = m_pw;
-		this.m_addr = m_addr;
 		this.m_phone = m_phone;
+		this.m_addr = m_addr;
 		this.m_nick = m_nick;
 	}
 

@@ -41,9 +41,6 @@ ul {
 </style>
 </head>
 <body>
-   <%
-	MemberVO vo = (MemberVO)session.getAttribute("vo");
-	%>
 
 		<div id="wrapper">
 			<!-- Main -->
@@ -53,32 +50,26 @@ ul {
 				<section class="post" style="margin-top:5rem;">
 					<header class="major">
 						<h3 id="content">
-							회원정보 수정
+							비밀번호 수정
 						</h3>
-					</header>
-					
-					<form action="UpdateService" method="post">
+					</header>		
+					<form action="PwService" method="post">
 					<table style="width:700px; margin:0 auto;">
 						<tr>
-							<td><span>아이디</span></td>
-							<td colspan="2"><span><%=vo.getM_id() %></span></td>
+							<td><span>현재 비밀번호</span></td>
+							<td colspan="2"><input type="password" id=pw1 name="pw1"></td>
 						</tr>
 						<tr>
-							<td><span>닉네임</span></td>
-							<td colspan="2"><input type="text" value="<%=vo.getM_nick() %>" name="nick"></td>
+							<td><span>변경할 비밀번호</span></td>
+							<td colspan="2"><input type="password" id=pw2 name="pw2"></td>
 						</tr>
 						<tr>
-							<td><span>전화번호</span></td>
-							<td colspan="2"><input type="text" value="<%=vo.getM_phone()%>" name="tel"></td>
-						</tr>
-						<tr>
-							<td><span>주소</span></td>
-							<td colspan="2"><input type="text" value="<%=vo.getM_addr()%>" name="addr"></td>
+							<td><span>비밀번호 확인</span></td>
+							<td colspan="2"><input type="password" id=pw3 name="pw3"></td>
 						</tr>
 						<tr>
 						<td colspan="2" style="text-align:center;">
-						<a href="PW.jsp" class="button">비밀번호 변경</a>
-						<input type="submit" value="수정완료">
+						<button type="button" onclick="next()">수정완료</button>
 						</td>
 						</tr>
 					</table>
@@ -97,6 +88,23 @@ ul {
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script type="text/javascript">
+		function next(){
+			var pw1 = document.querySelector('#pw1').value;
+			var pw2 = document.querySelector('#pw2').value;
+			var pw3 = document.querySelector('#pw3').value;
+			
+			if(pw2==pw3){
+				document.querySelector('button').setAttribute('type','submit');
+			}else{
+				alert("비밀번호를 확인해주세요.");
+			}
+		}
+		
+		</script>
 	
+</body>
+</html>
+
 </body>
 </html>

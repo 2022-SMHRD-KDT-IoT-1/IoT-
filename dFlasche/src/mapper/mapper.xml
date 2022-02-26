@@ -25,8 +25,28 @@
 		select * from tbl_member where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
 	
-	<update id="NickUp" parameterType="model.MemberVO">
+<!-- 	<update id="NickUp" parameterType="model.MemberVO">
 		update tbl_member set m_nick = #{m_nick} where m_id = #{m_id}
+	</update>
+	
+	<update id="PwUp" parameterType="model.MemberVO">
+		update tbl_member set m_pw = #{m_pw} where m_id = #{m_id}
+	</update>
+
+	<update id="PhoneUp" parameterType="model.MemberVO">
+		update tbl_member set m_phone = #{m_phone} where m_id = #{m_id}
+	</update>
+
+	<update id="AddrUp" parameterType="model.MemberVO">
+		update tbl_member set m_addr = #{m_addr} where m_id = #{m_id}
+	</update> -->
+	
+	<update id="UpdateService" parameterType="model.MemberVO">
+		update tbl_member set m_nick = #{m_nick}, m_phone = #{m_phone}, m_addr = #{m_addr} where m_id = #{m_id}
+	</update>
+	
+	<update id="PwUp" parameterType="model.MemberVO">
+		update tbl_member set m_pw = #{m_pw} where m_id = #{m_id}
 	</update>
 	
 	<delete id="DeleteService">
