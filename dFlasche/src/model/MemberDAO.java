@@ -29,11 +29,37 @@ public class MemberDAO {
 	public int join(MemberVO vo) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		
 		int cnt = session.insert("JoinService", vo);
-		
 		session.close();
-		
 		return cnt;
 	}
-}
+
+	public MemberVO login(MemberVO vo) {
+		
+			
+			SqlSession session = sqlSessionFactory.openSession();
+			MemberVO uvo = session.selectOne("LoginService", vo);
+			session.close();
+			return uvo;
+	}
+
+	public int nickup(MemberVO vo) {
+			
+			// SQL연결을 빌려오는 부분
+			SqlSession session = sqlSessionFactory.openSession(true);
+			System.out.println(vo.getM_nick());
+			int cnt = session.update("NickUp", vo);
+			session.close();
+			return cnt;
+		}
+
+	public int delete(String m_id) {
+
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.update("DeleteService", m_id);
+		session.close();
+		return cnt;
+	}
+
+	}
+

@@ -17,8 +17,20 @@
 	여러개의 데이터를 DB에서 가져올 때, resultType은 한 개로 가져올 때랑 같음
 	-->
 	
-	<insert id="JoinService" parameterType="model.MemberDAO">
+	<insert id="JoinService" parameterType="model.MemberVO">
 		insert into tbl_member values(#{m_id},#{m_pw},#{m_name},#{m_addr},#{m_phone},#{m_gender},#{m_nick},sysdate,'n')
 	</insert>
+	
+	<select id="LoginService" parameterType="model.MemberVO" resultType="model.MemberVO">
+		select * from tbl_member where m_id = #{m_id} and m_pw = #{m_pw}
+	</select>
+	
+	<update id="NickUp" parameterType="model.MemberVO">
+		update tbl_member set m_nick = #{m_nick} where m_id = #{m_id}
+	</update>
+	
+	<delete id="DeleteService">
+		delete from tbl_member where m_id = #{m_id}
+	</delete>
 	
 </mapper>

@@ -3229,13 +3229,14 @@ input, select, textarea {
 
 		#wrapper > .bg {
 			position: absolute;
-			top: 0;
+			top: 22px;
 			left: 0;
+			bottom: 50px;
 			width: 100%;
-			height: 100%;
+			height: 150%;
 			background-color: #212931;
 			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
-			background-size: auto,								auto,														100% auto;
+			background-size: 200%;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
 			background-attachment: scroll,								scroll,														scroll;
@@ -3307,10 +3308,11 @@ input, select, textarea {
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 		transition: opacity 1s ease, transform 1s ease;
 		position: relative;
+		bottom:150px;
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
+		min-height: 90vh;
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3618,12 +3620,12 @@ input, select, textarea {
 		background: rgba(255, 255, 255, 0.175);
 		height: 4rem;
 		line-height: 4rem;
-		margin: -4rem auto 0 auto;
+		margin: -3rem auto 0 auto;
 		overflow: hidden;
 		padding: 0 2rem 0 0;
-		position: relative;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
+		position: fixed;
+		top: 50px;
+		width: calc(100%);
 		z-index: 2;
 	}
 

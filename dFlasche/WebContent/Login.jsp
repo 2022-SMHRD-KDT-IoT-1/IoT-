@@ -44,13 +44,13 @@
 
 									<div class="form-group first">
 										<label for="ID">ID</label> <input type="text"
-											class="form-control" id="id">
+											class="form-control" id="id" name="id">
 
 									</div>
 
 									<div class="form-group last mb-4">
 										<label for="password">Password</label> <input type="password"
-											class="form-control" id="password">
+											class="form-control" id="password" name="pw">
 									</div>
 
 									<div class="d-flex mb-5 align-items-center">

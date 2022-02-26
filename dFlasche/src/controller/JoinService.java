@@ -15,6 +15,8 @@ import model.MemberVO;
 public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("euc-kr");
 
 		String m_id = request.getParameter("id");
 		String m_pw = request.getParameter("pw");
@@ -31,7 +33,7 @@ public class JoinService extends HttpServlet {
 		int cnt = dao.join(vo);
 		
 		if(cnt>0) {
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("GoMain");
 		}else {
 			response.sendRedirect("join.html");
 		}
