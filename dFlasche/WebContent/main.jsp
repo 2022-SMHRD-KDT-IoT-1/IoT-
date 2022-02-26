@@ -51,7 +51,7 @@
 							<%if(vo==null){%>
 								<li><a href="Login.jsp">Login & Sign Up</a></li>
 								<%}else{ %>
-									<li><a href="note.jsp">부향률 페이지</a></li>
+									<li><a href="alcohol.jsp">부향률 페이지</a></li>
 									<li><a href="#">Elements Reference</a></li>
 									<li><a href="#">Community</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
