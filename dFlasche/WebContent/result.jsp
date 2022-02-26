@@ -1,3 +1,4 @@
+<%@page import="model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -42,6 +43,8 @@
 </head>
 <body class="is-preload">
 
+	<% MemberVO vo=(MemberVO)session.getAttribute("vo"); out.print(vo); %>
+
 	<form action="#" method="post">
 		<div id="wrapper">
 
@@ -64,7 +67,7 @@
 				<!-- Post -->
 				<section class="post">
 					<header class="major">
-						<p id="content">사용자님이 선택하신 향수는 오 드 퍼퓸이고 Top Note의 시트러스 버베나 : g</p>
+						<p id="content"><%=vo.getM_nick() %>님이 선택하신 향수는 오 드 퍼퓸이고 Top Note의 시트러스 버베나 : g</p>
 						<p id="content">Middle Note의 라벤더 : g</p>
 						<p id="content">Base Note의 화이트 머스크 : g 입니다.</p>
 					</header>

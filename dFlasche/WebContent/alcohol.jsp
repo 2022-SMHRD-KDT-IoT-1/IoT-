@@ -61,6 +61,8 @@
 
 </style>
 
+<script src="js/jquery-3.6.0.js"></script>
+
 </head>
 <body class="is-preload">
 
@@ -97,7 +99,7 @@
 					<header class="major">
 						<p id="content">
 							원하는 지속시간에 따라 향수의 종류를 선택하시면 됩니다.<br>상세한 설명을 원하신다면 사진을 클릭해주세요!<br>
-							가이드를 원하신다면 <a href="guide.jsp">부향률 가이드</a>로 이동해주세요.
+							가이드를 원하신다면 <a href="guideTemp.jsp">부향률 가이드</a>로 이동해주세요.
 						</p>
 					</header>
 
