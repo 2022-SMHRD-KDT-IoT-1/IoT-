@@ -101,56 +101,21 @@ li {
 		-webkit-border-radius: 70px;
 	}
 
-/* 	
-	.lb-wrap {
- 		width: 105%;
-  		margin: 5px auto;
-  		position: relative;
-  		text-align: center;
-  		border: 1px solid #000000;
-	}
- 	.lb-wrap img {
-  		width: 100%;
-  	 	vertical-align: center;
-	}
-	.lb-text {
-  		padding: 15px 15px;
-  		background-color: #FFEEBC;
-  		text-align: center;
-  		position: absolute;
-  		top: 50%;
-  		left: 50%;
-  		transform: translate( -50%, -50% );
-	}
-
-
-	Layout(No Edit) 
- 	@media(max-width:440px) {
-  		.lb-wrap {
-  		width: 100%;
-  		}
-	} 
-*/
-
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";></script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Header -->
-					<!-- <header id="header">
-						<a href="index.html" class="logo">Massively</a>
-					</header> -->
-
 				<!-- Nav -->
-					<nav id="nav">
+					<nav id="nav" >
 						<ul class="links">
 							<li><a href="main.jsp">Home</a></li>
-							<li><a href="perfumeRatio.jsp">부향률 Page</a></li>
-							<li class="active"><a href="perfumeGuide.html">부향률 Guide</a></li>
+							<li><a href="alcohol.jsp">부향률 Page</a></li>
 						</ul>
+						
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -158,9 +123,9 @@ li {
 							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
-
+					
 				<!-- Main -->
-					<div id="main">
+					<div id="main" style="margin-top:5rem;; position: static;">
 
 						<!-- Post -->
 							<section class="post">
@@ -179,7 +144,6 @@ li {
 										<p><span class="notespan">: 가장 먼저 퍼져 나가 첫인상을 결정하는 향.<br>30분 이하의 시간만 지속되며,<br>
 										가볍고 산뜻한 계열의 향이 주를 이룹니다.<br>
 										 * 시트러스, 푸르티, 플로럴 계열</span> <br></p>
-										
 										
 									<h3 style="text-align:center;"><span class="h3span">Middle Note</span></h3>
 										
@@ -200,12 +164,9 @@ li {
 									<h2>부향률</h2>
 									<blockquote>향수의 종류는 알코올의 함유량에 따라 종류가 나뉩니다.<br>
 									알코올이 섞일 때 원액의 비율을 <b>부향률</b>이라고 합니다.<br> </blockquote><br>
-										
 										<div class="img_box">
 											<img class="ratioimg" src="images/ratio.png">
-									
 										</div>
-										
 									<hr />
 								
 								<!-- Lists -->
@@ -266,13 +227,11 @@ li {
 											
 										</div>		
 										
-									
 										</div><!-- box div -->
 									
 									</div><!-- row div -->
 									
 									<p><b>- 그 외 용어 설명 -</b> <span style="font-size:0.8rem;">이 궁금하시다면 아래 글자를 클릭해주세요!</span></p>
-									
 									
 									<dl>
 									
@@ -300,38 +259,52 @@ li {
 										<dt>Mossy</dt>
 										<p id="mossy" style="font-size: 1rem"></p>								
 									</div>
-										
+									
+									<div onclick="text6()">		
+										<dt>Spicy</dt>
+										<p id="spicy" style="font-size: 1rem"></p>								
+									</div>
+									
 									</dl>
 									
 									<hr />
 									
 									<h2>조향 추천 목록</h2>
 									<blockquote>본인만의 향을 아직 찾기 어려우신 분들은 아래의 <b>조향 추천 목록</b>을 보시고<br>
-									따라해보세요!! 누구나 쉽게 따라하실 수 있습니다. <br> </blockquote>
-									<p style="font-size: 0.9rem; color:red; margin-bottom: 1rem;">* <b style="color:red;">코롱</b> 타입의 향수로 먼저 알려드립니다.</p><br>
+									따라해보세요!! 누구나 쉽게 따라하실 수 있습니다.<br> 
+									알기 쉽게 인기 있는 향수들의 <b>원료 조합</b>을 보여드리겠습니다.<br> </blockquote>
+									<p>* 각 노트마다 넣어야 할 <b>비율</b>을 이름 옆에 숫자로 표기하였습니다.</p>
+									<p style="color:red; font-size: 1rem; margin-top: -2rem;">* 각 향수들의 자세한 설명은 사진을 클릭해주세요!</p>
 									
-									<div style="text-align: center;">
-										<img onclick="info1()" src="images/citrusbg.png" style="width: 80%;">
-										<p id="citruslist" style="text-align: center;"></p>
+									<h3>No.1</h3>
+									<div class="perfumelist">
+										<img onclick="tip1()"  src="images/santamaria.png" style="text-align: center; width:90%;">
+										<p id="comment1" style="text-align: left; font-size: 1.1rem;"></p>
 									</div>
+									<br><br><br>
 									
+									<h3>No.2</h3>
+									<div class="perfumelist">
+										<img onclick="tip2()"  src="images/byredo.png" style="text-align: center; width:90%;">
+										<p id="comment2" style="text-align: left; font-size: 1.1rem;"></p>
+									</div>
+									<br><br>
+										
+									<h3>No.3</h3>
+									<div class="perfumelist">
+										<img onclick="tip3()"  src="images/jomalone.png" style="text-align: center; width:90%;">
+										<p id="comment3" style="text-align: left; font-size: 1.1rem;"></p>
+									</div>
+									<br><br>
 									
-									<!-- <div class="lb-wrap"> -->
-										 <!-- <div class="lb-text">
-											<h2 style="font-family: 'Nanum Gothic Coding', monospace;">시트러스 느낌의 향</h2><br>
-											<p style="text-align: center;">-매우 쉽게 만들 수 있는 향의 조합이라 편안한 마음으로 만들어주세요.-</p><br>
-											<p style="text-align: center; font-family: 'Nanum Pen Script', cursive;">“한 번만 뿌려도 상큼한 향기가 선명하게 느껴져요”</p>
-											<p style="text-align: center; font-family: 'Nanum Pen Script', cursive;">“한여름 태양 아래서 느끼는 행복을 표현하기 충분해요”</p>
-										</div> -->
-					
-										<!-- <div class="lb-image" >
-											<img onclick="info1()" src="images/citrusbg.png" style="width: 83%;">
-											<br>
-											<p id="citruslist" style="text-align: center;"></p>
-										</div> -->
-									<!-- </div> -->
+									<h3>No.4</h3>
+									<div class="perfumelist">
+										<img onclick="tip4()"  src="images/diptyque.png" style="text-align: center; width:90%;">
+										<p id="comment4" style="text-align: left; font-size: 1.1rem;"></p>
+									</div>
 
 									<hr />
+									
 <!-- 								Preformatted Code
 									<h2>Preformatted</h2>
 									<pre><code>i = 0;
@@ -435,13 +408,30 @@ print 'It took ' + i + ' iterations to sort the deck.'; -->
 			$('#mossy').html('우디 향 중 가장 부드러운 느낌이며 흙냄새와 더 가벼운 우디 향을 만드는 달콤함이 결합되어 있습니다.');
 					 
 		}
+		function text6(){
+			$('#spicy').html('자극적인 향을 표현하고 향긋하고 짜릿하며 생기있고 톡 톡 튀는 느낌을 향에 담았습니다.<br> 인상에 깊이 남을 수 있는 향기인데, 플로랄이나 우디 등 다른 계열의 향을 더욱 깊이 있게 표현하고자 할 때 사용되기도 합니다.');
+					 
+		}
 		
 		/* 향수 조합 추천 */
-		function info1(){
-			$('#citruslist').html(' > <b>Top Note</b> : Bergamot <br> > <b>Middle Note</b> : Lily of the vally(은방울꽃) <br> > <b>Base Note</b> : Musk 8%');
+		function tip1(){
+			$('#comment1').html(' <p style="font-size:0.9rem; margin-bottom:1rem;"> * 베이스 노트부터 차근차근 오일들을 섞어주시면 됩니다.</p> · 이 향수의 특징은 과즙의 <b>상큼함</b>과 비누로 몸을 씻고 난 뒤 잔향 같은 <b>은은함</b>이 어울리는 향기입니다.<br>· 화창하고 쨍한 <b>상큼 비누</b>라고 생각하시면 될 것 같습니다.<br> · <b>사계절 데일리</b>의 향으로도 안성 맞춤입니다.<br> <span> > 이 향으로 만들어 보시겠어요??</span> <a href="santamaria.jsp"><button type="button">YES</button></a>');
+				
+		}
+		
+		function tip2(){
+			$('#comment2').html('<p style="font-size:0.9rem; margin-bottom:1rem;"> * 베이스 노트부터 차근차근 오일들을 섞어주시면 됩니다.</p> · 햇빛을 바라보며 누워있는 것 같은 <b>따뜻</b>하고 <b>담백한</b> 우디 향기가 납니다.<br> · <b>은은히 달콤</b>하고, <b>잔잔히 묵직</b>하고, 아늑한 느낌의 <b>포근함</b>이 있습니다.<br> · 봄, 가을, 겨울에 어울리는 향입니다.<br> <span> > 이 향으로 만들어 보시겠어요??</span> <a href="byredo.jsp"><button type="button">YES</button></a>');
+		}
+		
+		function tip3(){
+			$('#comment3').html('<p style="font-size:0.9rem; margin-bottom:1rem;"> * 베이스 노트부터 차근차근 오일들을 섞어주시면 됩니다.</p> · 봄 바람의 아늑한 <b>다바나 꽃</b>, 비누가 사르르 녹으며 꽃을 품은 <b>비누향기</b>가 산뜻하게 퍼지는 향기입니다.<br> · 향수에서 느껴지는 장미의 향기는 <b>맑고 깨끗한 느낌</b>으로 은은하게 퍼집니다.<br> · 봄, 가을에 잘 어울리는 향입니다.<br> <span> > 이 향으로 만들어 보시겠어요??</span> <a href="jomalone.jsp"><button type="button">YES</button></a>');
 			
-		}	
-
+		}
+		
+		function tip4(){
+			$('#comment4').html('<p style="font-size:0.9rem; margin-bottom:1rem;"> * 베이스 노트부터 차근차근 오일들을 섞어주시면 됩니다.</p> · 부드럽지만 <b>관능적</b>이면서도 고급스런 <b>웅장함</b>을 더 력셔리하게 느껴볼 수 있는 향기입니다.<br> · 상큼하기 보다는 <b>차분하게</b> 가라앉고, 진한 색이 떠오르는 달달함에 더욱 가까운 향기입니다.<br> · 전체적으로 차분하고 부드럽고 분위기 있는 <b>중립적인</b> 향기입니다. <br> · 봄, 여름, 가을에 잘 어울리는 향입니다.<br> <span> > 이 향으로 만들어 보시겠어요??</span> <a href="diptyque.jsp"><button type="button">YES</button></a>');
+		}
+		
 	</script>
 	
 	</body>

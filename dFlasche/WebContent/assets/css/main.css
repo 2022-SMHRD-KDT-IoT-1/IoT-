@@ -2884,6 +2884,10 @@ input, select, textarea {
 		dl dd {
 			margin-left: 2rem;
 		}
+		
+		dt{
+			color: maroon;
+		}
 
 	ul.divided li {
 		border-top-color: #eeeeee;

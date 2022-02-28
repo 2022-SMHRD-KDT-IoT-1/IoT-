@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -38,9 +39,34 @@
 	text-align: center;
 	width: 170px;
 }
+
+b{
+	color:navy;
+}
+
+input{
+	text-align: center;
+}
+
+.inputtd{
+	text-align: center;
+}
+
+#notetr4{
+	font-family: 'Gamja Flower', cursive;
+	font-size: 1.3rem;
+}
 </style>
 </head>
 <body class="is-preload">
+
+	<%
+		int num1 = 3;
+		int num2 = 4;
+		int num3 = 1;
+		int num4 = 2;
+		int sum = num1+num2+num3+num4;
+	%>
 	
 	
 	<form action="result.jsp" method="post">
@@ -55,8 +81,8 @@
 			<nav id="nav">
 				<ul class="links">
 					<li><a href="note.jsp">부향률 Page</a></li>
+					<li><a href="perfumeGuide.jsp">향수조합 guide</a></li>
 				</ul>
-				
 				<ul class="icons">
 					<li><a href="https://twitter.com/i/flow/login"
 						class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -74,9 +100,7 @@
 				<!-- Post -->
 				<section class="post">
 					<header class="major">
-						<p id="content">
-							자신의 취향에 따라 부향률을 정해주세요.<br>
-						</p>
+						<p id="content" style="font-size : 3rem;">선택하신 <b>조말론 허니서클</b> 향의 <b>부향률</b>입니다.</p>
 					</header>
 
 					<div class="image main">
@@ -86,7 +110,7 @@
 					<h2 class="major" align="center">부향표</h2>
 					<h4 class="major">※단위는 g(그램)입니다.</h4>
 					<form>
-						<table border="1" style="width: 1200px; height: 100px;">
+						<table border="1" style="width: 100%; height: 100px;">
 							<tr id="nameTr">
 								<td align="center" width="350px;">Note</td>
 								<td style="width: 400px;">향료 이름</td>
@@ -95,49 +119,38 @@
 
 							<tr id="notetr1">
 								<td align="center">Top Note</td>
-								<td id="topnotetd" class="input"><select name="pname"
-									onchange="selectForm(this.options[this.selectedIndex].value)"
-									style="width: 200">
-										<option value="citrusVerbena">시트러스 버베나</option>
-										<option value="mandarin">만다린</option>
-										<option value="bergamot">베르가뭇</option>
-										<option value="lime">라임</option>
-										<option value="teatree">티트리</option>
-								</select></td>
-								<td><input type="text"></td>
+								<td id="topnotetd" class="input">다바나</td>
+								<td class="inputtd"><%=num1 %>g</td>
 							</tr>
+							
+							<tr></tr>
+							<tr></tr>
 
 							<tr id="notetr2">
 								<td align="center">Middle Note</td>
-								<td class="input"><select name="pname">
-										<option value="Lavender">라벤더</option>
-										<option value="cinnamon">시나몬</option>
-										<option value="Lilac">라일락</option>
-										<option value="rosemary">로즈마리</option>
-										<option value="cypress">사이프러스</option>
-								</select></td>
-								<td><input type="text"></td>
+								<td rowspan="2" class="input">인동덩굴<br> 장미</td>
+								<td rowspan="2" class="inputtd"><%=num2 %>g<br> <%=num3 %>g</td>
 							</tr>
-
+							
+							<tr></tr>
+							<tr></tr>
+							
 							<tr id="notetr3">
 								<td align="center">Base Note</td>
-								
-								
-							
-								
-								<td class="input"><select name="pname">
-										<option value="whitemusk">화이트 머스크</option>
-										<option value="benzoin">벤조인</option>
-										<option value="sandalwood">샌달우드</option>
-										<option value="thyme">타임</option>
-										<option value="vainilla">바닐라</option>
-								</select></td>
-								<td><input type="text"></td>
+								<td class="input">이끼</td>
+								<td class="inputtd"><%=num4 %>g</td>
 							</tr>
-
+							<tr></tr>
+							
+							<tr id="notetr4">
+								<td align="center">알코올비율</td>
+								<td class="inputtd" >오 드 코롱(eau de cologne) : 80%</td>
+							</tr>
+								
 							<tr id="sumTr">
 								<td>합계</td>
-								<td colspan="2">g</td>
+								<td></td>
+								<td><b><%=sum %>g</b></td>
 							</tr>
 
 							<tr align="center">
