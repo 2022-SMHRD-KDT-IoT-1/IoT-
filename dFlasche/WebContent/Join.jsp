@@ -24,6 +24,14 @@
 <!-- Style -->
 <link rel="stylesheet" href="css/style.css">
 
+<style>
+
+.content{
+height:100vh;
+background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+}
+
+</style>
 
 </head>
 <body>
@@ -38,7 +46,7 @@
 					<div class="col-md-6 contents">
 						<div class="row justify-content-center">
 							<div class="col-md-12">
-								<div class="form-block">
+								<div class="form-block" style="background-color:#FFF0F5;">
 									<h3>Sign Up</h3>
 
 								<div class="form-group first">

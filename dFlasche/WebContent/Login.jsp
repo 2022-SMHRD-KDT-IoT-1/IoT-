@@ -24,6 +24,15 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
 
+<style>
+
+.content{
+height:100vh;
+background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+}
+
+<</style>
+
 </head>
 <body>
 
@@ -37,7 +46,7 @@
 					<div class="col-md-6 contents">
 						<div class="row justify-content-center">
 							<div class="col-md-12">
-								<div class="form-block">
+								<div class="form-block" style="background-color:#FFF0F5;">
 									<h3>
 										Account <strong>Sign</strong>
 									</h3>
@@ -57,13 +66,12 @@
 										<label class="control control--checkbox mb-0"><span
 											class="caption">아이디 저장</span> <input type="checkbox"
 											checked="checked" />
-											<div class="control__indicator"></div> </label> <span class="ml-auto"><a
+											<div class="control_indicator"></div> </label> <span class="ml-auto"><a
 											href="#" class="forgot-pass">비밀번호 찾기</a></span>
 									</div>
 
 									<div class="d-flex mb-5 align-items-center">
 										<span class="caption">계정이 없으신가요?</span>
-										<div class="control__indicator"></div>
 										</label> <span class="ml-auto"><a href="Join.jsp">회원가입</a></span>
 									</div>
 
