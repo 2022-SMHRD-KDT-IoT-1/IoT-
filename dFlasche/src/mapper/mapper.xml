@@ -25,22 +25,6 @@
 		select * from tbl_member where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
 	
-<!-- 	<update id="NickUp" parameterType="model.MemberVO">
-		update tbl_member set m_nick = #{m_nick} where m_id = #{m_id}
-	</update>
-	
-	<update id="PwUp" parameterType="model.MemberVO">
-		update tbl_member set m_pw = #{m_pw} where m_id = #{m_id}
-	</update>
-
-	<update id="PhoneUp" parameterType="model.MemberVO">
-		update tbl_member set m_phone = #{m_phone} where m_id = #{m_id}
-	</update>
-
-	<update id="AddrUp" parameterType="model.MemberVO">
-		update tbl_member set m_addr = #{m_addr} where m_id = #{m_id}
-	</update> -->
-	
 	<update id="UpdateService" parameterType="model.MemberVO">
 		update tbl_member set m_nick = #{m_nick}, m_phone = #{m_phone}, m_addr = #{m_addr} where m_id = #{m_id}
 	</update>
@@ -53,4 +37,15 @@
 		delete from tbl_member where m_id = #{m_id}
 	</delete>
 	
+	<insert id="writeBoard" parameterType="model.BoardVO">
+		insert into tbl_community values(tbl_community_seq.nextval, #{article_subject}, #{article_content}, sysdate, #{article_file1}, #{article_file2}, '0', #{m_id})
+	</insert>
+	
+	<select id="selectBoard" resultType="model.BoardVO">
+		select * from tbl_community order by article_date desc
+	</select>
+	
+	<select id="viewBoard" resultType="model.BoardVO">
+		select * from tbl_community where article_seq=#{article_seq}
+	</select>
 </mapper>

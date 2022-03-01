@@ -85,7 +85,7 @@ ul.action.stacked li:first-child {
 						<li><a href="update.jsp" class="button primary">Á¤º¸º¯°æ</a></li>
 						<li><a href="#" id="delete" class="button primary" onclick="deleteCheck()">È¸¿øÅ»Åð</a></li>
 						<li><a href="#" class="button primary">³ªÀÇ¹èÇÕ</a></li>
-						<li><a href="#" class="button primary">»Ð»Ð»Ð»Ð</a></li>
+						<li><a href="writeBBS.jsp" class="button primary">¹èÇÕ°øÀ¯</a></li>
 						<li><a href="#" class="button primary">»Ð»Ð»Ð»Ð</a></li>
 						</ul>
 					</div>
