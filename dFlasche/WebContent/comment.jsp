@@ -50,7 +50,7 @@
 			
 		
 	<div>
-		<form action="commentService" method="post" enctype="multipart/form-data">
+		<form action="commentService" method="post">
 
 			<table border="1" style="width: 1200px; height: 100px;">
 				<!-- ´ñ±Û ÀÛ¼º  -->

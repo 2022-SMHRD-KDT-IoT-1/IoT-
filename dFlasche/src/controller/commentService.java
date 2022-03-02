@@ -24,6 +24,9 @@ public class commentService extends HttpServlet {
 		String m_id = request.getParameter("comm_writer");
 		String comm_content = request.getParameter("comm_content");
 		
+		System.out.println(m_id);
+		System.out.println(comm_content);
+		
 		CommentVO vo = new CommentVO(comm_content, m_id);
 		
 		CommentDAO dao = new CommentDAO();
