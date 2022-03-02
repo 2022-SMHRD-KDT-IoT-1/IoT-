@@ -2,43 +2,51 @@ package model;
 
 public class CommentVO {
 	
-	private int num1;
-	private int num2;
-	private String comment;
+	private int comm_seq;
+	private int article_seq;
+	private String comm_content;
+	private String comm_date;
 	private String m_id;
-	private String day;
 	
-	public CommentVO(int num1, int num2, String comment, String m_id, String day) {
+	public CommentVO(int comm_seq, int article_seq, String comm_content, String comm_date, String m_id) {
 		
-		this.num1 = num1;
-		this.num2 = num2;
-		this.comment = comment;
+		this.comm_seq = comm_seq;
+		this.article_seq = article_seq;
+		this.comm_content = comm_content;
+		this.comm_date = comm_date;
 		this.m_id = m_id;
-		this.day = day;
+	}
+	
+
+	public  CommentVO(String comm_content, String m_id) {
+		
+		this.comm_content = comm_content;
+		this.m_id = m_id;
+		
 	}
 
-	public int getNum1() {
-		return num1;
+	public int getcomm_seq() {
+		return comm_seq;
 	}
 
-	public void setNum1(int num1) {
-		this.num1 = num1;
+	public void setcomm_seq(int comm_seq) {
+		this.comm_seq = comm_seq;
 	}
 
-	public int getNum2() {
-		return num2;
+	public int getarticle_seq() {
+		return article_seq;
 	}
 
-	public void setNum2(int num2) {
-		this.num2 = num2;
+	public void setarticle_seq(int article_seq) {
+		this.article_seq = article_seq;
 	}
 
-	public String getComment() {
-		return comment;
+	public String getcomm_content() {
+		return comm_content;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setcomm_content(String comm_content) {
+		this.comm_content = comm_content;
 	}
 
 	public String getM_id() {
@@ -49,12 +57,12 @@ public class CommentVO {
 		this.m_id = m_id;
 	}
 
-	public String getDay() {
-		return day;
+	public String getcomm_date() {
+		return comm_date;
 	}
 
-	public void setDay(String day) {
-		this.day = day;
+	public void setcomm_date(String comm_date) {
+		this.comm_date = comm_date;
 	}
 	
 	

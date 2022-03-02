@@ -48,4 +48,16 @@
 	<select id="viewBoard" resultType="model.BoardVO">
 		select * from tbl_community where article_seq=#{article_seq}
 	</select>
+	
+	<!-- //////////////////////////////////////////////////////////////////// -->
+	
+	<!-- 댓글 mapper -->
+	 <insert id="commentService" parameterType="model.CommentVO">
+		insert into tbl_comment values(tbl_comment_seq.nextval, tbl_community_seq.nextval, #{comm_content}, sysdate, #{m_id})
+	</insert> 
+	
+	<select id="commentList" parameterType="model.CommentVO" resultType="model.CommentVO">
+		select * from tbl_comment where article_seq = #{article_seq}
+	</select>
+	
 </mapper>

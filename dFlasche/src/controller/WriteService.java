@@ -18,7 +18,7 @@ public class WriteService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-String savePath = request.getServletContext().getRealPath("img");
+		String savePath = request.getServletContext().getRealPath("img");
 		
 		int maxSize = 1024 * 1024 * 5;
 		
