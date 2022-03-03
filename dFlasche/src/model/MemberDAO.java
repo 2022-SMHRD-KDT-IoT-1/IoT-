@@ -101,7 +101,14 @@ public class MemberDAO {
 		return cnt;
 	}
 
-
+	public MemberVO idCheck(String id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemberVO vo = session.selectOne("IdCheck", id);
+		session.close();
+		return vo;
+	}
+	
+	
 
 	}
 

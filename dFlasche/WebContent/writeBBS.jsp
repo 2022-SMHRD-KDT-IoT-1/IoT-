@@ -1,3 +1,5 @@
+<%@page import="model.BoardVO"%>
+<%@page import="java.util.List"%>
 <%@page import="model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -107,7 +109,7 @@
 				</ul>
 				<%} %>
 			</nav>
-						<div id = "board">
+				<div id = "board">
 				<form action="WriteService" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>

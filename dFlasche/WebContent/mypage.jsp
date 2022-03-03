@@ -17,15 +17,13 @@
 	url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap')
 	;
 
-ul.action {
+.mymenu .action {
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
 	cursor: default;
 	list-style: none;
-	position: absolute;
-	left: 300px;
 }
 
 /* 	#wrapper {
@@ -80,11 +78,11 @@ ul.action.stacked li:first-child {
 						</h2>
 					</header>
 
-					<div>
+					<div class="mymenu">
 						<ul class="action stacked">
 						<li><a href="update.jsp" class="button primary">Á¤º¸º¯°æ</a></li>
 						<li><a href="#" id="delete" class="button primary" onclick="deleteCheck()">È¸¿øÅ»Åð</a></li>
-						<li><a href="#" class="button primary">³ªÀÇ¹èÇÕ</a></li>
+						<li><a href="mymix.jsp" class="button primary">³ªÀÇ¹èÇÕ</a></li>
 						<li><a href="writeBBS.jsp" class="button primary">¹èÇÕ°øÀ¯</a></li>
 						<li><a href="#" class="button primary">»Ð»Ð»Ð»Ð</a></li>
 						</ul>

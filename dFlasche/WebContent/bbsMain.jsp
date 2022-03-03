@@ -146,6 +146,11 @@ img{
 	      	<a href="goViewBoard?num=<%=bvo.getArticle_seq()%>">
 			<img src="img/<%=bvo.getArticle_file1()%>">
 	      	</a>
+	      <figcaption class="like">
+	      <% if (Integer.parseInt(bvo.getArticle_cnt()) == 0) {%> 
+	      <div id="btn_like"><i id='dislike' class='far fa-heart' onclick="like()"></i>
+	      <%}%><a href="main.jsp" style="color:white;"><i id="comment" class="fa-solid fa-comment" style="margin-left:10px;"></i></a></div> 
+	      </figcaption>
 	    </figure>
         </div>
       	<%} %>
@@ -165,6 +170,8 @@ img{
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script src="https://kit.fontawesome.com/42e9e6c485.js" crossorigin="anonymous"></script>
 	
 	<script type="text/javascript">
 
@@ -189,6 +196,22 @@ img{
 
 	masonryLayout();
 	window.addEventListener("resize", masonryLayout);
+	</script> 
+	
+	<script type="text/javascript">
+	
+		function like(){
+		const like = document.querySelector('#dislike');
+		like.className = 'fas fa-heart';
+		like.style.color = 'red';
+		} 
+
+		function dislike(){			
+		if(like.className = 'fas fa-heart'){
+		like.className = 'far fa-heart';
+		like.style.color = 'white'; 
+		}
+		} 
 	</script> 
 
 </body>

@@ -40,9 +40,7 @@ background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,
 		<div class="content">
 			<div class="container">
 				<div class="row justify-content-center">
-					<!-- <div class="col-md-6 order-md-2">
-          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
-        </div> -->
+
 					<div class="col-md-6 contents">
 						<div class="row justify-content-center">
 							<div class="col-md-12">
@@ -51,6 +49,8 @@ background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,
 
 								<div class="form-group first">
 									<label for="ID">ID</label> <input type="text" class="form-control" id="id" name="id">
+									<button class="button primary small" type="button" id = "check" onclick="idCheck()">중복 확인</button>
+									<p id="result"></p>
 								</div>
 
 								<div class="form-group last mb-4">
@@ -92,13 +92,49 @@ background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,
 	</div>
 	</div>
 
+	</form>
 
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
-
-	</form>
-
+	<script src="js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		function idCheck() {
+			
+			// 1. email가져오기
+			let id = $('#id').val();
+			
+			// 2. ajax
+			$.ajax({
+				url : "checkService",
+				type : "post",
+				data : {
+					'id' : id
+				},
+				success : function(res) {
+					
+					console.log(res);
+					
+					if(res == 'true'){
+						// 사용 가능한 아이디
+						// .css('속성명', '값') : 해당 태그의 css를 바꿔주는 함수
+						// .attr('속성명', '값') : 태그의 속성 값을 변경해주는 함수
+						$('#result').html('사용가능한 아이디.');
+						$('#result').css('color', 'green');
+					}else{
+						// 중복된 아이디
+						$('#result').html('중복된 아이디입니다.');
+						$('#result').css('color', 'red');
+					}
+					
+					
+				},
+				error : function() { alert("error"); }
+				
+			});
+			
+		}	
+		</script>
 </body>
 </html>

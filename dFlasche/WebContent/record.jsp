@@ -45,7 +45,6 @@
 
 
 
-	<form action="record.jsp" method="post">
 		<div id="wrapper">
 
 			<!-- Header -->
@@ -61,30 +60,43 @@
 				
 			</nav>
 
-			<!-- Main -->
 			<div id="main">
-
-				<!-- Post -->
 				<section class="post">
-				<form action="record.jsp" method="post">
+				<div id = "board">
+				<!-- Post -->
 					<header class="major">
-						<p id="content" name="base">님이 선택하신 향수는 오드퍼퓸이고</p>
-						<p id="content" name="tnote">Top Note의 시트러스 버베나 : g</p>
-						<p id="content" name="mnote">Middle Note의 라벤더 : g</p>
-						<p id="content" name="bnote">Base Note의 화이트 머스크 : g 입니다.</p>
+						<p id="content" name="base">님이 선택하신 향수는 오드퍼퓸, Top Note의 시트러스 버베나 : 1g, Middle Note의 라벤더 : 0.5g, Base Note의 화이트 머스크 : 1.5g 입니다.</p>
 					</header>
-					<p style="text-align:center;">
-					<button id="create" type="submit" class="button primary" onclick="mymix()">
-					추출하기
-					</button>
-					<button class="button primary">
-					뒤로가기
-					</button>
-					</p>
+				<form action="record" method="post" enctype="multipart/form-data">
+				<table id="list">
+					<tr>
+						<td>향수 이름</td>
+						<td><input type="text" name="title"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input name="file" type="file"><br>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<p>특징 또는 느낌</p>
+							<textarea name="content" rows="10" style="resize: none;"></textarea>			
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="text-align:center;">
+							<button id="create" class="button primary" onclick="mymix()">
+								저장</button>
+							<a href="main.jsp">
+							<button type="button" class="button primary">HOME</button>
+							</a>
+						</td>
+					</tr>
+				</table>
 				</form>
-			</section>
 			</div>
-		</div>
+
 
 
 		<!-- Copyright -->
@@ -111,9 +123,6 @@
 				
 				if(record != true){
 					document.querySelector('form').setAttribute('action', 'GoMain')
-				}else{
-					document.querySelector('form').setAttribute('action', 'record.jsp')
-					
 				}
 				
 			}

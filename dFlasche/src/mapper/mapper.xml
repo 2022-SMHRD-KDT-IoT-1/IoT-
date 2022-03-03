@@ -60,4 +60,11 @@
 		select * from tbl_comment where article_seq = #{article_seq}
 	</select>
 	
+	<select id="IdCheck" resultType="model.MemberVO">
+		select * from tbl_member where m_id=#{m_id}
+	</select>
+	
+	<insert id="writePerfume" parameterType="model.PerfumeVO">
+		insert into tbl_user_perfume values(tbl_user_perfume_seq.nextval, #{up_title}, #{up_content}, sysdate, 1, #{up_file})
+	</insert>
 </mapper>
