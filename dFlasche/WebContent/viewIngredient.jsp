@@ -1,6 +1,5 @@
-<%@page import="model.CommentVO"%>
+<%@page import="model.IngredientVO"%>
 <%@page import="java.util.List"%>
-<%@page import="model.BoardVO"%>
 <%@page import="model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -38,18 +37,6 @@
 	#writer{
 		margin-top: 50px !important;
 	}
-/* 	a{
-		text-decoration: none !important;
-	}
-	
-		html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
-	} */
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
@@ -87,11 +74,13 @@
 
 	<%
 		MemberVO vo = (MemberVO) session.getAttribute("vo");
-		BoardVO bvo = (BoardVO)request.getAttribute("bvo");
-		List<CommentVO> list = (List<CommentVO>)request.getAttribute("list"); 
+		IngredientVO ivo = (IngredientVO)request.getAttribute("ivo");
+		List<IngredientVO> list = (List<IngredientVO>)request.getAttribute("list");
 	%>
+	<!-- 원료 클릭했을 때 내용 보이는 곳 -->
+	
 	<div class="content">
-			<nav id="nav">
+			 <nav id="nav">
 				<ul class="links">
 					<li><a href="main.jsp">d Flasche</a></li>
 					<%if(vo==null){%>
@@ -100,6 +89,7 @@
 					<li><a href="note.jsp">부향률 페이지</a></li>
 					<li><a class="active" href="goBoardMain">Community</a></li>
 					<li><a href="mypage.jsp">My Page</a></li>
+					<li><a href="perfumeIngredient.jsp">원료 등록하기</a></li>
 					<%} %>
 				</ul>
 				<ul class="icons">
@@ -111,76 +101,42 @@
 						style="padding: 0 10px; margin: 0 5px;">Logout</a></li>
 				</ul>
 				<%} %>
-			</nav>
+			</nav> 
 			
 			<div class = "board">
-				<table class="list">
+				<form action="DeleteIngredient" method="post" name="frm">
+				<table class="list" style="color:white;">
 					<tr>
-						<td><%=bvo.getArticle_subject()%></td>
+						<td>no.<%=ivo.getP_seq() %></td>
+					</tr>
+					<tr style="background-color: ">
+						<td><%=ivo.getP_name() %></td>
 					</tr>
 					<tr>
-						<td><%=bvo.getM_id() %></td>
-					</tr>
-					<tr>
-						<td colspan="2"><%=bvo.getArticle_content() %></td>
+						<td>타입 : <%=ivo.getP_type() %></td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<img alt="" src="img/<%=bvo.getArticle_file1()%>">
+							<img alt="" src="img/<%=ivo.getP_file()%>">
 						</td>
-						<%if(bvo.getArticle_file2() != null) {%>
-						<td colspan="2">
-							<img alt="" src="img/<%=bvo.getArticle_file2()%>">
-						</td>
-							<%} %>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><%=ivo.getP_specialty() %></td>
 					</tr>
 					
 					<tr>
-						<td colspan="2"><a href="goBoardMain"><button>뒤로가기</button></a></td>
+						<td colspan="2">
+						<a href="#"><a href="goIngredientMain"><button>목록</button></a> 
+						<button type="button" id="deletebtn" onclick="deleteIngredient()">삭제하기</button></a>
+						</td>
 					</tr>
 					
 				</table>
+				</form>
 			</div>
 			
 		</div>
 		
-			<!-- 댓글  -->
-			<div class = "board">
-				
-				<form action="commentService" method="post">	
-					<table class="list">
-					
-					<%-- <%for(CommentVO cvo : list){ %>
-					<tr class="nameTr" style="overflow: auto;">
-						<td><%=cvo.getM_id() %></td>
-						<td><%=cvo.getcomm_content() %></td>
-						<td><%=cvo.getcomm_date() %></td>
-					</tr>
-					<%} %>
-					<tr></tr> --%>
-					
-					<tr class="nameTr">
-						<td>작성자</td>
-						<td><input type="text" name="comm_writer" placeholder="작성자" style="width: 150px;"></td>
-					</tr>
-
-					<tr></tr>
-
-					<tr class="nameTr">
-						<td>댓글 작성</td>
-						<td><input type="text" name="comm_content" placeholder="댓글을 작성해 주세요."></td>
-					</tr>
-
-					<tr></tr>
-				
-					<tr class="nameTr">
-						<td colspan="2" style="align:center;"> <input type="submit" value="댓글작성"> <input type="reset" value="초기화"> </td>
-					</tr>
-					</table>
-				</form>	
-				
-			</div>		
-			
 		
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -190,6 +146,20 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+	<script type="text/javascript">
+		
+	$(document).ready(function(){
+	    $("#deletebtn").on('click', function() {  // 아이디가 deletebtn인 엘리먼트가 눌리면?
+	        if(confirm("정말로 삭제하시겠습니까??")) {  // 확인 창이 열림
+	            frm.submit();
+	        };
+	    });
+	});
+	
+	
+	
+	</script>
 
 </body>
 

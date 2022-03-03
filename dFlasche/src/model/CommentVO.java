@@ -18,10 +18,10 @@ public class CommentVO {
 	}
 	
 
-	public  CommentVO(String comm_content, String m_id) {
+	public  CommentVO( String m_id, String comm_content) {
 		
-		this.comm_content = comm_content;
 		this.m_id = m_id;
+		this.comm_content = comm_content;
 		
 	}
 

@@ -55,7 +55,7 @@
 									<li><a href="perfumeGuide.jsp">향수조합 Guide</a></li>
 									<li><a href="goBoardMain">Community</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
-									<li><a href="comment.jsp">댓글</a></li>
+									<li><a href="perfumeIngredient.jsp">향수원료page</a></li>
 									<%} %>
 						</ul>
 						<ul class="icons">

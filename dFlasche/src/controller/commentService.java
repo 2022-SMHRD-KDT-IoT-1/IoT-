@@ -27,7 +27,7 @@ public class commentService extends HttpServlet {
 		System.out.println(m_id);
 		System.out.println(comm_content);
 		
-		CommentVO vo = new CommentVO(comm_content, m_id);
+		CommentVO vo = new CommentVO(m_id, comm_content);
 		
 		CommentDAO dao = new CommentDAO();
 		int cnt = dao.writeContent(vo);

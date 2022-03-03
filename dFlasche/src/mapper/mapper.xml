@@ -67,4 +67,21 @@
 	<insert id="writePerfume" parameterType="model.PerfumeVO">
 		insert into tbl_user_perfume values(tbl_user_perfume_seq.nextval, #{up_title}, #{up_content}, sysdate, 1, #{up_file})
 	</insert>
+	
+	<!-- 향수 원료 -->
+	<insert id="IngredientWrite" parameterType="model.IngredientVO">
+		insert into tbl_perfume values(tbl_perfume_seq.nextval, #{p_type}, #{p_name}, #{p_specialty}, #{p_file}, sysdate, #{m_id})
+	</insert>
+	
+	<select id="selectIngredient" resultType="model.IngredientVO">
+		select * from tbl_perfume order by p_date desc
+	</select>
+	
+	<select id="viewIngredient" resultType="model.IngredientVO">
+		select * from tbl_perfume where p_seq=#{p_seq}
+	</select>
+	
+	<delete id="DeleteIngredient">
+		delete from tbl_perfume where p_name = #{p_name}
+	</delete>
 </mapper>
