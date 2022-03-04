@@ -20,7 +20,7 @@
 
 		<body class="is-preload">
 
-			<% MemberVO vo=(MemberVO)session.getAttribute("vo"); %>
+			<%MemberVO vo=(MemberVO)session.getAttribute("vo"); %>
 
 				<!-- Wrapper -->
 				<div id="wrapper" class="fade-in">
@@ -50,13 +50,17 @@
 							<li class="active"><a href="main.jsp">d Flasche</a></li>
 							<%if(vo==null){%>
 								<li><a href="Login.jsp">Login & Sign Up</a></li>
-								<%}else{ %>
+							<%}else{ %>
+								<%if(vo.getAdmin_yn().equals("n")){ %>
 									<li><a href="alcohol.jsp">부향률 페이지</a></li>
 									<li><a href="perfumeGuide.jsp">향수조합 Guide</a></li>
 									<li><a href="goBoardMain">Community</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
-									<li><a href="perfumeIngredient.jsp">향수원료page</a></li>
-									<%} %>
+								<%}else if(vo.getAdmin_yn().equals("y")){%>
+									<li><a href="#">향료추가</a></li>
+									<li><a href="#">배합가이드추가</a></li>
+						<%}%>
+						<%}%>
 						</ul>
 						<ul class="icons">
 							<%if(vo!=null){%>

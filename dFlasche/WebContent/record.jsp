@@ -80,8 +80,14 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<p>특징 또는 느낌</p>
-							<textarea name="content" rows="10" style="resize: none;"></textarea>			
+							<p>상세 정보</p>
+							<textarea name="content" rows="10" style="resize: none;">
+1. 부향율 : %
+
+2. 탑노트 : g/ 미들노트 : g/ 베이스노트 : g
+
+3. 특징 또는 느낌 : 
+							</textarea>			
 						</td>
 					</tr>
 					<tr>
@@ -89,7 +95,7 @@
 							<button id="create" class="button primary" onclick="mymix()">
 								저장</button>
 							<a href="main.jsp">
-							<button type="button" class="button primary">HOME</button>
+							<button class="button primary">HOME</button>
 							</a>
 						</td>
 					</tr>

@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="model.MemberVO"%>
+<%@page import="model.PerfumeVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -60,7 +63,76 @@
 	font-weight: bold;
 }
 
+@import
+	url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap')
+	;
+
+table.type1 {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	margin: 20px 10px;
+}
+
+table.type1 th {
+	font-family: 'Gamja Flower', cursive;
+	font-size:1.3rem;
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+
+table.type1 td {
+	font-family: 'Gamja Flower', cursive;
+	font-size:1.1rem;
+	width: 350px;
+	padding: 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+
+table.type1 {
+border-collapse: collapse;
+text-align: left;
+line-height: 1.5;
+border: 1px solid #ccc;
+margin: 20px 10px;
+}
+table.type1 thead {
+border-right: 1px solid #ccc;
+border-left: 1px solid #ccc;
+background-color: #C6AF81;
+}
+table.type1 thead th {
+padding: 10px;
+font-weight: bold;
+vertical-align: top;
+/* color: #fff; */
+}
+table.type1 tbody th {
+width: 150px;
+padding: 10px;
+font-weight: bold;
+vertical-align: top;
+border-bottom: 1px solid #ccc;
+background: #fcf1f4;
+}
+table.type1 td {
+width: 350px;
+padding: 10px;
+vertical-align: top;
+border-bottom: 1px solid #ccc;
+}
+
+ img{
+	width:300px;
+	height: 300px;
+}
+
 </style>
+
 
 <script src="js/jquery-3.6.0.js"></script>
 
@@ -94,19 +166,64 @@
 
 			<!-- Main -->
 			<div id="main">
-
+			<% 
+			
+			MemberVO vo = (MemberVO)request.getAttribute("vo");
+			List<PerfumeVO> list = (List<PerfumeVO>)request.getAttribute("list");
+			
+			
+			%>
+				
 				<!-- Post -->
 				<section class="post">
+					<%if(list==null) {%>
 					<header class="major">
 						<p id="content">
 							아직 저장된 배합이 없어요!<br>나만의 레시피를 만들러 가볼까요?<br>
 							<a href="alcohol.jsp">배합하기</a>로 이동해주세요.
 						</p>
 					</header>
+						<%}else{ %>
+						<%for (PerfumeVO pvo : list) {%>
+					<table class="type1" border="1" style="text-align: center;">
+			<thead>
+				<tr>
+					<th scope="cols">이미지</th>
+					<th scope="cols" colspan="3">향수 이름 : <%=pvo.getUp_title() %></th>
+					
+				</tr>
+			</thead>
+			</tbody>
+			<tr>
+				<td scope="row" rowspan="4"> <img alt="" src="img/<%=pvo.getUp_file() %>"> </td>
+				<td colspan="3">상세 정보</td>
+			</tr>			
+			<tr>
+				<td colspan="3"><div style="white-space:pre;"><%=pvo.getUp_content() %></td>
+			</tr>
+			</tbody>
+<!-- 			<tr>
+				<td colspan="2"></td>
+				<td>탑노트<br>
+					<img alt="" src="images/diptyquetopnote.png">
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2"></td>
+				<td >미들<br>
+					<img alt="" src="images/diptyquemiddlenote.png">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td >베이스</td>
+			</tr> -->
+			
+		</table>
+						<%} %>
+						<%} %>
 
-					<img onclick="tip1()" src="images/santamaria.png"
-						style="text-align: center; width: 90%;">
-					<p id="comment1" style="text-align: left; font-size: 1.1rem;"></p>
 		</section>
 		</div>
 
@@ -130,15 +247,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
-	<script type="text/javascript">
-		
-		function tip1(){
-			$('#comment1').html(' <p style="font-size:0.9rem; margin-bottom:1rem;"> * 베이스 노트부터 차근차근 오일들을 섞어주시면 됩니다.</p> · 이 향수의 특징은 과즙의 <b>상큼함</b>과 비누로 몸을 씻고 난 뒤 잔향 같은 <b>은은함</b>이 어울리는 향기입니다.<br>· 화창하고 쨍한 <b>상큼 비누</b>라고 생각하시면 될 것 같습니다.<br> · <b>사계절 데일리</b>의 향으로도 안성 맞춤입니다.<br> <span> > 이 향으로 만들어 보시겠어요??</span> <a href="santamaria.jsp"><button type="button">YES</button></a>');
-				
-		}
-	</script>
-
 
 </body>
 </html>

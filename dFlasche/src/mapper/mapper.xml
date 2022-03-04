@@ -84,4 +84,9 @@
 	<delete id="DeleteIngredient">
 		delete from tbl_perfume where p_name = #{p_name}
 	</delete>
+	
+	<!-- 나의 배합 -->
+	<select id="myPerfumes" resultType="model.PerfumeVO">
+		select * from tbl_user_perfume order by up_date desc
+	</select>
 </mapper>

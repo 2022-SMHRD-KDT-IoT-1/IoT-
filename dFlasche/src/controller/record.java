@@ -35,6 +35,9 @@ public class record extends HttpServlet {
 		
 		String up_title = multi.getParameter("title");
 		String up_content = multi.getParameter("content");
+		
+		up_content.replace("\r\n","<br>");
+		
 		//String m_id = vo.getM_id();
 		
 		String up_file = multi.getFilesystemName("file");

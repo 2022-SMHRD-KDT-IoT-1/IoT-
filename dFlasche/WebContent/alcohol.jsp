@@ -138,7 +138,7 @@
 					<div>
 						<br> 
 						<label for="perfume">향수 종류 선택</label> 
-						<select>
+						<select name="alchol">
 							<option name="perfume" value="0">퍼퓸(Perfume - 알코올80%)</option>
 							<option name="perfume" value="1">오 드 퍼퓸(Eau de Perfume - 알코올85%)</option>
 							<option name="perfume" value="2">오 드 뚜왈렛(Eau de Toillette - 알코올90%)</option>

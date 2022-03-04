@@ -1,6 +1,7 @@
 package model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -30,6 +31,14 @@ private static SqlSessionFactory sqlSessionFactory;
 		int cnt = session.insert("writePerfume", vo);
 		session.close();
 		return cnt;
+	}
+
+
+	public List<PerfumeVO> selectMine() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PerfumeVO> list = session.selectList("myPerfumes");
+		session.close();
+		return list;
 	}
 	
 }

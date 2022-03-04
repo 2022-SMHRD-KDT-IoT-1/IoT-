@@ -9,7 +9,16 @@ public class MemberVO {
 	private String m_phone;
 	private String m_gender;
 	private String m_nick;
+	private String admin_yn;
 	
+	public String getAdmin_yn() {
+		return admin_yn;
+	}
+
+	public void setAdmin_yn(String admin_yn) {
+		this.admin_yn = admin_yn;
+	}
+
 	public MemberVO() {
 	}
 	
@@ -21,6 +30,7 @@ public class MemberVO {
 		this.m_phone = m_phone;
 		this.m_gender = m_gender;
 		this.m_nick = m_nick;
+		this.admin_yn = admin_yn;
 	}
 
 	public MemberVO(String m_id, String m_pw) {
