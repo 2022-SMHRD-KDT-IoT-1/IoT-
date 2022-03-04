@@ -40,23 +40,31 @@
 
 #perfume{
 	font-family: 'fonts/gm.otf';
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 1.3em;
+	font-weight: bolder;
+	float: right;
+	margin-top: 220px;
 }
 #EDP{
 	font-family: 'fonts/gm.otf';
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 1.3em;
+	font-weight: bolder;
+	float: right;
+	margin-top: 220px;
 }
 #EDT{
 	font-family: 'fonts/gm.otf';
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 1.3em;
+	font-weight: bolder;
+	float: right;
+	margin-top: 220px;
 }
 #EDC{
 	font-family: 'fonts/gm.otf';
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 1.3em;
+	font-weight: bolder;
+	float: right;
+	margin-top: 220px;
 }
 
 </style>
@@ -66,7 +74,7 @@
 </head>
 <body class="is-preload">
 
-	<form action="note.jsp" method="post">
+	<form action="alcohol" method="post">
 		<div id="wrapper">
 
 			<!-- Header -->
@@ -99,48 +107,51 @@
 					<header class="major">
 						<p id="content">
 							원하는 지속시간에 따라 향수의 종류를 선택하시면 됩니다.<br>상세한 설명을 원하신다면 사진을 클릭해주세요!<br>
-							가이드를 원하신다면 <a href="guideTemp.jsp">부향률 가이드</a>로 이동해주세요.
+							가이드를 원하신다면 <a href="perfumeGuide.jsp">부향률 가이드</a>로 이동해주세요.
 						</p>
 					</header>
 
-					<div onclick="show1()">
-						<img width="180px;" height="360px;" src="images/perfume.png">
+					<div class="p">
+						<img onclick="show1()" width="180px;" height="360px;" src="images/perfume.png">
 						<p id="perfume"></p>
 					</div>
 					<br>
 
-					<div onclick="show2()">
-						<img width="180px;" height="360px;" src="images/edp.png">
+					<div class="p">
+						<img onclick="show2()" width="180px;" height="360px;" src="images/edp.png">
 						<p id="EDP"></p>
 					</div>
 					<br>
 
-					<div onclick="show3()">
-						<img width="180px;" height="360px;" src="images/edt.png">
+					<div class="p">
+						<img onclick="show3()" width="180px;" height="360px;" src="images/edt.png">
 						<p id="EDT"></p>
 					</div>
 					<br>
 
-					<div onclick="show4()">
-						<img width="180px;" height="360px;" src="images/edc.png">
+					<div class="p">
+						<img onclick="show4()" width="180px;" height="360px;" src="images/edc.png">
 						<p id="EDC"></p>
 					</div>
 
 					<br>
 					<div>
-						<br> <label for="perfume">향수 종류 선택</label> <select>
-							<option name="perfume">퍼퓸(Perfume)</option>
-							<option name="perfume">오 드 퍼퓸(Eau de Perfume)</option>
-							<option name="perfume">오 드 뚜왈렛(Eau de Toillette)</option>
-							<option name="perfume">오 드 코롱(Eau de Cologne)</option>
+						<br> 
+						<label for="perfume">향수 종류 선택</label> 
+						<select>
+							<option name="perfume" value="0">퍼퓸(Perfume - 알코올80%)</option>
+							<option name="perfume" value="1">오 드 퍼퓸(Eau de Perfume - 알코올85%)</option>
+							<option name="perfume" value="2">오 드 뚜왈렛(Eau de Toillette - 알코올90%)</option>
+							<option name="perfume" value="3">오 드 코롱(Eau de Cologne - 알코올95%)</option>
 						</select>
 					</div>
 					<br>
 					
 					<table>
 						<tr>
-							<td colspan="3" align="center"><input type="submit"
-								value="다음"></td>
+							<td colspan="3" align="center">
+								<input type="submit" value="다음">
+							</td>
 						</tr>
 					</table>
 			</div>
@@ -174,7 +185,7 @@
 				url : 'ex01perfume',
 				type : 'post',
 				success : function() {
-					$('#perfume').html('→ 알코올 99.5%와 향료 20%의 부향률로 지속시간 6시간 이상');
+					$('#perfume').html('<p>> 알코올 80%와 향료 20%의 부향률로 지속시간 6시간 이상 </p>');
 				},
 				error : function() {
 					alert("error");
@@ -189,7 +200,7 @@
 				url : 'ex01perfume',
 				type : 'post',
 				success : function() {
-					$('#EDP').html('→ 알코올 90%와 향료 15%의 부향률로 지속시간5시간 이상');
+					$('#EDP').html('<p>> 알코올 85%와 향료 15%의 부향률로 지속시간5시간 이상 </p>');
 				},
 				error : function() {
 					alert("error");
@@ -204,7 +215,7 @@
 				url : 'ex01perfume',
 				type : 'post',
 				success : function(res) {
-					$('#EDT').html('→ 알코올 85%와 향료 10%의 부향률로 지속시간 3시간 이상');
+					$('#EDT').html('<p>> 알코올 90%와 향료 10%의 부향률로 지속시간 3시간 이상 </p>');
 				},
 				error : function() {
 					alert("error");
@@ -219,7 +230,7 @@
 				url : 'ex01perfume',
 				type : 'post',
 				success : function(res) {
-					$('#EDC').html('→ 알코올 80%와 향료 5%의 부향률로 지속시간 2시간 이상');
+					$('#EDC').html('<p>> 알코올 95%와 향료 5%의 부향률로 지속시간 2시간 이상 </p>');
 				},
 				error : function() {
 					alert("error");

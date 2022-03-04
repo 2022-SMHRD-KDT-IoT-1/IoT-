@@ -43,7 +43,28 @@
 </head>
 <body class="is-preload">
 
-
+	<%
+		MemberVO vo=(MemberVO)session.getAttribute("vo"); 
+		out.print(vo);
+		
+		String pname1 = (String)session.getAttribute("pname1");
+		out.print(pname1);
+		String pname2 = (String)session.getAttribute("pname2");
+		out.print(pname2);
+		String pname3 = (String)session.getAttribute("pname3");
+		out.print(pname3);
+		
+		String num1 = (String)session.getAttribute("num1");
+		out.print(num1);
+		String num2 = (String)session.getAttribute("num2");
+		out.print(num2);
+		String num3 = (String)session.getAttribute("num3");
+		out.print(num3);
+		
+		String alcohol = (String)session.getAttribute("alcohol");
+		out.print(alcohol);
+		
+	%>
 
 	<form action="record.jsp" method="post">
 		<div id="wrapper">
@@ -68,17 +89,17 @@
 				<section class="post">
 				<form action="record.jsp" method="post">
 					<header class="major">
-						<p id="content" name="base">님이 선택하신 향수는 오드퍼퓸이고</p>
-						<p id="content" name="tnote">Top Note의 시트러스 버베나 : g</p>
-						<p id="content" name="mnote">Middle Note의 라벤더 : g</p>
-						<p id="content" name="bnote">Base Note의 화이트 머스크 : g 입니다.</p>
+						<p id="content"><%=vo.getM_id() %>님이 선택하신 향수는 <%=alcohol %> 이고 Top Note의 <%=pname1 %> : <%=num1 %> g</p>
+						<p id="content">Middle Note의 <%=pname2 %> : <%=num2 %>g</p>
+						<p id="content">Base Note의 <%=pname3 %> : <%=num3 %>g 입니다.</p>
 					</header>
+					
 					<p style="text-align:center;">
 					<button id="create" type="submit" class="button primary" onclick="mymix()">
-					추출하기
+						추출하기
 					</button>
 					<button class="button primary">
-					뒤로가기
+						뒤로가기
 					</button>
 					</p>
 				</form>

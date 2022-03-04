@@ -41,9 +41,13 @@
 </style>
 </head>
 <body class="is-preload">
+
+	<%
+		String alcohol = (String)session.getAttribute("alcohol");
+	%>
 	
 	
-	<form action="result.jsp" method="post">
+	<form action="result" method="post">
 		<div id="wrapper">
 
 			<!-- Header -->
@@ -95,49 +99,52 @@
 
 							<tr id="notetr1">
 								<td align="center">Top Note</td>
-								<td id="topnotetd" class="input"><select name="pname"
-									onchange="selectForm(this.options[this.selectedIndex].value)"
-									style="width: 200">
-										<option value="citrusVerbena">시트러스 버베나</option>
-										<option value="mandarin">만다린</option>
-										<option value="bergamot">베르가뭇</option>
-										<option value="lime">라임</option>
-										<option value="teatree">티트리</option>
+								<td class="input">
+								<select name="pname1"
+										onchange="selectForm(this.options[this.selectedIndex].value)"
+										style="width: 200">
+										<option value="0">시트러스 버베나</option>
+										<option value="1">만다린</option>
+										<option value="2">베르가뭇</option>
+										<option value="3">라임</option>
+										<option value="4">티트리</option>
 								</select></td>
-								<td><input type="text"></td>
+								<td><input type="text" name="num1"></td>
 							</tr>
 
 							<tr id="notetr2">
 								<td align="center">Middle Note</td>
-								<td class="input"><select name="pname">
-										<option value="Lavender">라벤더</option>
-										<option value="cinnamon">시나몬</option>
-										<option value="Lilac">라일락</option>
-										<option value="rosemary">로즈마리</option>
-										<option value="cypress">사이프러스</option>
+								<td class="input">
+								<select name="pname2">
+										<option value="0">라벤더</option>
+										<option value="1">시나몬</option>
+										<option value="2">라일락</option>
+										<option value="3">로즈마리</option>
+										<option value="4">사이프러스</option>
 								</select></td>
-								<td><input type="text"></td>
+								<td><input type="text" name="num2"></td>
 							</tr>
 
 							<tr id="notetr3">
 								<td align="center">Base Note</td>
-								
-								
-							
-								
-								<td class="input"><select name="pname">
-										<option value="whitemusk">화이트 머스크</option>
-										<option value="benzoin">벤조인</option>
-										<option value="sandalwood">샌달우드</option>
-										<option value="thyme">타임</option>
-										<option value="vainilla">바닐라</option>
+								<td class="input">
+								<select name="pname3">
+										<option value="0">화이트 머스크</option>
+										<option value="1">벤조인</option>
+										<option value="2">샌달우드</option>
+										<option value="3">타임</option>
+										<option value="4">바닐라</option>
 								</select></td>
-								<td><input type="text"></td>
+								<td><input type="text" name="num3"></td>
 							</tr>
 
 							<tr id="sumTr">
-								<td>합계</td>
-								<td colspan="2">g</td>
+								<td colspan="2">
+									<button type="button" onclick="sum()">합계</button>
+								</td>
+								<td>
+									<hr>
+								</td>
 							</tr>
 
 							<tr align="center">
@@ -168,6 +175,34 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		
+		<script type="text/javascript">
+			function sum() {
+				let num1 = $('input[name=num1]').val()
+				let num2 = $('input[name=num2]').val()
+				let num3 = $('input[name=num3]').val()
+				
+				$.ajax({
+					url : 'notesum',
+					type : 'post',
+					data : {
+						'num1' : num1,
+						'num2' : num2,
+						'num3' : num3
+					},
+					
+					success : function(res) {
+						console.log(res);
+						
+						$('hr').after('<p>' + res + '</p>');
+					},
+					error : function() { alert("error"); }
+					
+				});
+				
+			}
+		
+		</script>
 
 	</form>
 
