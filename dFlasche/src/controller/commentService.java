@@ -1,8 +1,11 @@
 package controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,24 +24,33 @@ public class commentService extends HttpServlet {
 		
 		request.setCharacterEncoding("euc-kr");
 		
+		
+		// queryString으로 가져온 seq 파라미터 수집
+		int article_seq = Integer.parseInt(request.getParameter("article_seq"));
 		String m_id = request.getParameter("comm_writer");
 		String comm_content = request.getParameter("comm_content");
-		
+
+
 		System.out.println(m_id);
 		System.out.println(comm_content);
-		
-		CommentVO vo = new CommentVO(m_id, comm_content);
-		
+
+		CommentVO cvo = new CommentVO(m_id, comm_content);
+		// setter이용 해서 집어넣어주기
+		cvo.setarticle_seq(article_seq);
+
 		CommentDAO dao = new CommentDAO();
-		int cnt = dao.writeContent(vo);
+
+		int cnt = dao.writeContent(cvo);
 
 		if (cnt > 0) {
 			System.out.println("입력성공");
-			response.sendRedirect("main.jsp");
+			request.setAttribute("cvo", cvo);
+			RequestDispatcher rd = request.getRequestDispatcher("commentList");
+			rd.forward(request, response);
+
 		} else {
 			System.out.println("입력 실패");
-			response.sendRedirect("comment.jsp");
-		
+			response.sendRedirect("bbsMain.jsp");
 		}
 
 	}

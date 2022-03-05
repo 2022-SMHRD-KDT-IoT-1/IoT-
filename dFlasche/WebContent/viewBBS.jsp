@@ -24,20 +24,30 @@
 		linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 		url("../../images/bg.jpg");
 	padding: 3px;
+	color: white;
 }
 
-	.board{
-		width: 1000px !important;
-		margin: 0px auto !important;
-		text-align: center !important;
-		margin-top: 100px !important;
-	}
-	.list{
-		margin: 0px auto !important;
-	}
-	#writer{
-		margin-top: 50px !important;
-	}
+.board {
+	width: 1000px !important;
+	margin: 0px auto !important;
+	text-align: center !important;
+	margin-top: 100px !important;
+}
+
+.board2 {
+	width: 1000px !important;
+	margin: 0px auto !important;
+	text-align: center !important;
+	margin-top: -5px !important;
+}
+
+.list {
+	margin: 0px auto !important;
+}
+
+#writer {
+	margin-top: 50px !important;
+}
 /* 	a{
 		text-decoration: none !important;
 	}
@@ -50,138 +60,233 @@
 		font: inherit;
 		vertical-align: baseline;
 	} */
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
 
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block;
-	}
+body {
+	line-height: 1;
+}
 
-	body {
-		line-height: 1;
-	}
+ol, ul {
+	list-style: none;
+}
 
-	ol, ul {
-		list-style: none;
-	}
+blockquote, q {
+	quotes: none;
+}
 
-	blockquote, q {
-		quotes: none;
-	}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+table, tr {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-	table {
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
+td {
+	border-style: hidden !important;
+}
 
-	body {
-		-webkit-text-size-adjust: none;
-	}
+body {
+	-webkit-text-size-adjust: none;
+}
+
+th {
+	text-align: center;
+}
 </style>
 </head>
 
 <body class="is-preload">
 
 	<%
-		MemberVO vo = (MemberVO) session.getAttribute("vo");
-		BoardVO bvo = (BoardVO)request.getAttribute("bvo");
-		List<CommentVO> list = (List<CommentVO>)request.getAttribute("list"); 
+	MemberVO vo = (MemberVO) session.getAttribute("vo");
+	BoardVO bvo = (BoardVO) request.getAttribute("bvo");
+	CommentVO cvo = (CommentVO) request.getAttribute("cvo");
+	List<CommentVO> list = (List<CommentVO>) request.getAttribute("list");
 	%>
 	<div class="content">
-			<nav id="nav">
-				<ul class="links">
-					<li><a href="main.jsp">d Flasche</a></li>
-					<%if(vo==null){%>
-					<li><a href="Login.jsp">Login & Sign Up</a></li>
-					<%}else{ %>
-					<li><a href="note.jsp">부향률 페이지</a></li>
-					<li><a class="active" href="goBoardMain">Community</a></li>
-					<li><a href="mypage.jsp">My Page</a></li>
-					<%} %>
-				</ul>
-				<ul class="icons">
-					<%if(vo!=null){%>
-					<li><%=vo.getM_nick()%>님</li>
-				</ul>
-				<ul class="actions small">
-					<li><a href="LogoutService" class="button primary small"
-						style="padding: 0 10px; margin: 0 5px;">Logout</a></li>
-				</ul>
-				<%} %>
-			</nav>
-			
-			<div class = "board">
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="main.jsp">d Flasche</a></li>
+				<%
+					if (vo == null) {
+				%>
+				<li><a href="Login.jsp">Login & Sign Up</a></li>
+				<%
+					} else {
+				%>
+				<li><a href="note.jsp">부향률 페이지</a></li>
+				<li><a class="active" href="goBoardMain">Community</a></li>
+				<li><a href="mypage.jsp">My Page</a></li>
+				<%
+					}
+				%>
+			</ul>
+			<ul class="icons">
+				<%
+					if (vo != null) {
+				%>
+				<li><%=vo.getM_nick()%>님</li>
+			</ul>
+			<ul class="actions small">
+				<li><a href="LogoutService" class="button primary small"
+					style="padding: 0 10px; margin: 0 5px;">Logout</a></li>
+			</ul>
+			<%
+				}
+			%>
+		</nav>
+
+		<form action="commentService" method="get">
+			<div class="board">
 				<table class="list">
 					<tr>
-						<td><%=bvo.getArticle_subject()%></td>
+						<td style="width: 100px;"><input name="article_seq"
+							type="hidden" value="<%=bvo.getArticle_seq()%>"></td>
+						<td colspan="2"><span
+							style="display: block; margin-right: 100px;"><%=bvo.getArticle_subject()%></span></td>
 					</tr>
 					<tr>
-						<td><%=bvo.getM_id() %></td>
+						<td colspan="3"><%=bvo.getM_id()%></td>
 					</tr>
 					<tr>
-						<td colspan="2"><%=bvo.getArticle_content() %></td>
+						<td colspan="3"><%=bvo.getArticle_content()%></td>
 					</tr>
 					<tr>
-						<td colspan="2">
-							<img alt="" src="img/<%=bvo.getArticle_file1()%>">
-						</td>
-						<%if(bvo.getArticle_file2() != null) {%>
-						<td colspan="2">
-							<img alt="" src="img/<%=bvo.getArticle_file2()%>">
-						</td>
-							<%} %>
+						<td colspan="2"><img alt=""
+							src="img/<%=bvo.getArticle_file1()%>"></td>
+						<%
+							if (bvo.getArticle_file2() != null) {
+						%>
+						<td colspan="2"><img alt=""
+							src="img/<%=bvo.getArticle_file2()%>"></td>
+						<%
+							}
+						%>
 					</tr>
-					
+
 					<tr>
-						<td colspan="2"><a href="goBoardMain"><button>뒤로가기</button></a></td>
+						<td colspan="3"><a href="goBoardMain"><button>뒤로가기</button></a></td>
 					</tr>
-					
+
 				</table>
 			</div>
-			
-		</div>
-		
+
 			<!-- 댓글  -->
-			<div class = "board">
+
+			<table id="table" border="1">
+				<!-- <tr>
+					<td colspan="3">작성자</td>
+				</tr>
+				<tr class="content">
+					<td colspan="3" align="center">
+						<span>
+						바다냄새를 만들어봤습니다<br>
+						Top Note : %<br>
+						Middle Note : %<br>
+						Base Note : %<br>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><img id="img" src="images/pppp.png"></td>
+				</tr>
 				
-				<form action="commentService" method="post">	
-					<table class="list">
-					
-					<%-- <%for(CommentVO cvo : list){ %>
-					<tr class="nameTr" style="overflow: auto;">
-						<td><%=cvo.getM_id() %></td>
-						<td><%=cvo.getcomm_content() %></td>
-						<td><%=cvo.getcomm_date() %></td>
-					</tr>
-					<%} %>
-					<tr></tr> --%>
-					
+				<tr>
+					<td colspan="3">
+						<i id='dislike' class='far fa-heart' onclick="like()"></i>
+						<i class="far fa-comment"></i>
+					</td>
+				</tr> -->
+
+				<tr>
+					<td style="border-bottom: none;" valign="middle"><input
+						type="text" name="comm_writer" placeholder="작성자"></td>
+					<td><input type="text" style="height: 120px;"
+						class="form-contorl" placeholder="상대방을 존중하는 댓글을 남깁시다."
+						name="comm_content"></td>
+					<td><input type="submit" id="btn" value="댓글 작성"></td>
+				</tr>
+
+				<tr class="nameTr">
+					<th>작성자</th>
+					<th>내용</th>
+					<th>시간</th>
+				</tr>
+
+ 				<%
+					for (CommentVO cvo2 : list) {
+				%>
+				<tr></tr>
+
+				<tr class="nameTr">
+					<td><%=cvo2.getM_id()%></td>
+					<td><%=cvo2.getcomm_content()%></td>
+					<td><%=cvo2.getcomm_date()%></td>
+				</tr>
+				<%
+					}
+				%> 
+
+
+
+			</table>
+
+			<!-- 			<div class="board2">
+				<table class="list2" border="none">
+
 					<tr class="nameTr">
 						<td>작성자</td>
-						<td><input type="text" name="comm_writer" placeholder="작성자" style="width: 150px;"></td>
+						<td><input type="text" name="comm_writer" placeholder="작성자"
+							style="width: 150px;"></td>
 					</tr>
 
 					<tr></tr>
 
 					<tr class="nameTr">
 						<td>댓글 작성</td>
-						<td><input type="text" name="comm_content" placeholder="댓글을 작성해 주세요."></td>
+						<td><input type="text" name="comm_content"
+							placeholder="댓글을 작성해 주세요." autofocus="autofocus"></td>
 					</tr>
 
 					<tr></tr>
-				
+
 					<tr class="nameTr">
-						<td colspan="2" style="align:center;"> <input type="submit" value="댓글작성"> <input type="reset" value="초기화"> </td>
+						<td colspan="2" style="align: center;"><input type="submit"
+							value="댓글작성"> <input type="reset" value="초기화"></td>
 					</tr>
-					</table>
-				</form>	
-				
-			</div>		
-			
-		
+				</table> -->
+
+
+
+			<%-- 		<table class="list" border="none" style="width:53%;">
+			<tr class="nameTr">
+				<th>작성자</th>
+				<th>내용</th>
+				<th>시간</th>
+			</tr>
+
+			<%for(CommentVO cvo2 : list){ %>
+			<tr></tr>
+
+			<tr class="nameTr">
+				<td><%=cvo2.getM_id() %></td>
+				<td><%=cvo2.getcomm_content() %></td>
+				<td><%=cvo2.getcomm_date() %></td>
+			</tr>
+			<%} %>
+		</table> --%>
+	</div>
+	</form>
+	</div>
+
+
+
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -190,6 +295,21 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script type="text/javascript">
+		function like() {
+			const like = document.querySelector('#dislike');
+			like.className = 'fas fa-heart';
+			like.style.color = 'red';
+		}
+
+		function dislike() {
+			if (like.className = 'fas fa-heart') {
+				like.className = 'far fa-heart';
+				like.style.color = 'white';
+			}
+		}
+	</script>
 
 </body>
 
