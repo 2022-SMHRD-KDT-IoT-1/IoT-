@@ -119,7 +119,7 @@ img{
 					<%if(vo==null){%>
 					<li><a href="Login.jsp">Login & Sign Up</a></li>
 					<%}else{ %>
-					<li><a href="alcohol.jsp">부향률 페이지</a></li>
+					<li><a href="note.jsp">부향률 페이지</a></li>
 					<li><a class="active" href="goBoardMain">Community</a></li>
 					<li><a href="mypage.jsp">My Page</a></li>
 					<%} %>
@@ -143,13 +143,13 @@ img{
 	     <figure>
 	      <figcaption class="title"><%=bvo.getM_id() %></figcaption>
 	      <figcaption class="text"><%=bvo.getArticle_date()%></figcaption>
-	      	<a href="goViewBoard?num=<%=bvo.getArticle_seq()%>">
+	      	<a href="goViewBoard?article_seq=<%=bvo.getArticle_seq()%>">
 			<img src="img/<%=bvo.getArticle_file1()%>">
 	      	</a>
 	      <figcaption class="like">
 	      <% if (Integer.parseInt(bvo.getArticle_cnt()) == 0) {%> 
 	      <div id="btn_like"><i id='dislike' class='far fa-heart' onclick="like()"></i>
-	      <%}%><a href="main.jsp" style="color:white;"><i id="comment" class="fa-solid fa-comment" style="margin-left:10px;"></i></a></div> 
+	      <%}%><a href="commentList?article_seq=<%=bvo.getArticle_seq()%>" style="color:white;"><i id="comment" class="fa-solid fa-comment" style="margin-left:10px;"></i></a></div> 
 	      </figcaption>
 	    </figure>
         </div>
@@ -186,9 +186,7 @@ img{
 	        masonryContainerStyle.getPropertyValue("grid-auto-rows")
 	    );
 
-	    document.querySelectorAll(".masonry-item").forEach((elt) => {
-	        elt.style.gridRowEnd = `span ${Math.ceil(
-	            elt.querySelector(".pseudo-img").scrollHeight / autoRows +
+	    document.querySelectorAll(".masonry-item").forEach((elt) => { elt.style.gridRowEnd = `span ${Math.ceil( elt.querySelector(".pseudo-img").scrollHeight / autoRows +
 	                columnGap / autoRows
 	        )}`;
 	    });
