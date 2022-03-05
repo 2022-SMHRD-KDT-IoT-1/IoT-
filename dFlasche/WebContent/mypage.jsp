@@ -78,7 +78,7 @@ ul.action.stacked li:first-child {
 						</h2>
 					</header>
 
-					<div class="mymenu">
+					<div class="mymenu" style="margin-left: 6rem;">
 						<ul class="action stacked">
 						<li><a href="update.jsp" class="button primary">Á¤º¸º¯°æ</a></li>
 						<li><a href="#" id="delete" class="button primary" onclick="deleteCheck()">È¸¿øÅ»Åð</a></li>

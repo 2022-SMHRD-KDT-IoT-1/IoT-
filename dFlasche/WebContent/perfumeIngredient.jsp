@@ -62,8 +62,16 @@
 
 	body {
 		-webkit-text-size-adjust: none;
-		
-		
+	}
+	
+	table tbody tr:nth-child(2n + 1) {
+   		background-color: rgb(34 46 72 / 25%);
+	}
+	
+	h2{
+		text-align: center;
+		margin-top: 2rem; 
+		font-family:'Gamja Flower', cursive;
 	}
 </style>
 </head>

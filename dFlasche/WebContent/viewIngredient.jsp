@@ -33,6 +33,7 @@
 	}
 	.list{
 		margin: 0px auto !important;
+		height: 600px !important;
 	}
 	#writer{
 		margin-top: 50px !important;
@@ -66,6 +67,11 @@
 
 	body {
 		-webkit-text-size-adjust: none;
+	}
+	input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+   		background-color: transparent;
+    	box-shadow: inset 0 0 0 2px #89b3de;
+    	color: #89b3de !important;
 	}
 </style>
 </head>
@@ -121,7 +127,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" style="text-align: center;"><%=ivo.getP_specialty() %></td>
+						<td colspan="2" style="text-align: center;"><%=ivo.getP_specialty().replace("\r\n", "<br>") %></td>
 					</tr>
 					
 					<tr>
