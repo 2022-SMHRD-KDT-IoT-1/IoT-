@@ -18,7 +18,7 @@ tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
-	margin: 0;
+	margin-bottom: -55px;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -3226,14 +3226,12 @@ input, select, textarea {
 		-webkit-transition: opacity 0.5s ease;
 		-ms-transition: opacity 0.5s ease;
 		transition: opacity 0.5s ease;
-		position: relative;
 		z-index: 1;
 		overflow: hidden;
 	}
 
 		#wrapper > .bg {
 			position: absolute;
-			top: 22px;
 			left: 0;
 			bottom: 50px;
 			width: 100%;
@@ -3248,7 +3246,7 @@ input, select, textarea {
 		}
 
 			#wrapper > .bg.fixed {
-				position: fixed;x
+				position: fixed;
 				width: 100vw;
 				height: 100vh;
 			}
@@ -3629,6 +3627,7 @@ input, select, textarea {
 		padding: 0 2rem 0 0;
 		position: fixed;
 		top: 50px;
+		right: 1px;
 		width: calc(100%);
 		z-index: 2;
 	}

@@ -5,7 +5,7 @@
 
 		<head>
 			<meta charset="EUC-KR">
-			<title>d Flasche</title>
+			<title>HOME</title>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 			<link rel="stylesheet" href="assets/css/main.css" />
@@ -13,7 +13,10 @@
 				<link rel="stylesheet" href="assets/css/noscript.css" />
 			</noscript>
 			<style type="text/css">
-
+				.nick{
+					margin-bottom:0;
+					margin-right:-15px;
+				}
 
 			</style>
 		</head>
@@ -52,7 +55,7 @@
 								<li><a href="Login.jsp">Login & Sign Up</a></li>
 							<%}else{ %>
 								<%if(vo.getAdmin_yn().equals("n")){ %>
-									<li><a href="alcohol.jsp">향수조합 페이지</a></li>
+									<li><a href="alcohol.jsp">부향률 페이지</a></li>
 									<li><a href="perfumeGuide.jsp">향수조합 Guide</a></li>
 									<li><a href="goBoardMain">Community</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
@@ -62,23 +65,15 @@
 						<%}%>
 						<%}%>
 						</ul>
-						<ul class="icons">
+						<ul class="icons" style="position:relative; left:35px;">
 							<%if(vo!=null){%>
-								<li>
+								<li class="nick">
 									<%=vo.getM_nick()%>님
 								</li>
-						</ul>
-						<ul class="actions small">
 							<li><a href="LogoutService" class="button primary small"
-									style="padding: 0 10px; margin:0 5px;">Logout</a></li>
+									style="padding: 0 10px; margin:0 5px; position: relative; bottom:30px;">Logout</a></li>
 						</ul>
 						<%} %>
-							<!-- 				<li><a href="https://ko-kr.facebook.com/"
-					class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a
-					href="https://www.instagram.com/accounts/login/?source=auth_switcher"
-					class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-							</ul>
 					</nav>
 
 				</div>
