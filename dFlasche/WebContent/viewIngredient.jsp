@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>ViewInGredient</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -86,7 +86,7 @@
 					<%if(vo==null){%>
 					<li><a href="Login.jsp">Login & Sign Up</a></li>
 					<%}else{ %>
-					<li><a href="note.jsp">부향률 페이지</a></li>
+					<li><a href="alcohol.jsp">부향률 페이지</a></li>
 					<li><a class="active" href="goBoardMain">Community</a></li>
 					<li><a href="mypage.jsp">My Page</a></li>
 					<li><a href="perfumeIngredient.jsp">원료 등록하기</a></li>

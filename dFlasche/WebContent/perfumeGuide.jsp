@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>Elements Reference - Massively by HTML5 UP</title>
+		<title>PerfumeGuide</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -113,15 +113,16 @@ li {
 					<nav id="nav" >
 						<ul class="links">
 							<li><a href="main.jsp">Home</a></li>
-							<li><a href="alcohol.jsp">부향률 Page</a></li>
+							<li><a href="alcohol.jsp">향수조합 Page</a></li>
 						</ul>
 						
-						<ul class="icons">
+						<!-- <ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
+						</ul> -->
+						
 					</nav>
 					
 				<!-- Main -->
@@ -323,7 +324,7 @@ print 'It took ' + i + ' iterations to sort the deck.'; -->
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<!-- <footer id="footer">
 						<section>
 							<form method="post" action="#">
 								<div class="fields">
@@ -369,11 +370,11 @@ print 'It took ' + i + ' iterations to sort the deck.'; -->
 								</ul>
 							</section>
 						</section>
-					</footer>
+					</footer> -->
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<ul><li>&copy; d Flasche</li>
 					</div>
 
 			</div>

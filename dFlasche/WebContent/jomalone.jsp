@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Note Page</title>
+<title>Jomalone</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -80,10 +80,11 @@ input{
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
-					<li><a href="note.jsp">부향률 Page</a></li>
+					<li><a href="alcohol.jsp">향수조합 Page</a></li>
 					<li><a href="perfumeGuide.jsp">향수조합 guide</a></li>
 				</ul>
-				<ul class="icons">
+				
+				<!-- <ul class="icons">
 					<li><a href="https://twitter.com/i/flow/login"
 						class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="https://ko-kr.facebook.com/"
@@ -91,7 +92,8 @@ input{
 					<li><a
 						href="https://www.instagram.com/accounts/login/?source=auth_switcher"
 						class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul>
+				</ul> -->
+				
 			</nav>
 
 			<!-- Main -->

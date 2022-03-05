@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>CombiFrame</title>
 <style type="text/css">
 @import
 	url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap')

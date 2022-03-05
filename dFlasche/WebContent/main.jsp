@@ -5,7 +5,7 @@
 
 		<head>
 			<meta charset="EUC-KR">
-			<title>Insert title here</title>
+			<title>d Flasche</title>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 			<link rel="stylesheet" href="assets/css/main.css" />
@@ -52,7 +52,7 @@
 								<li><a href="Login.jsp">Login & Sign Up</a></li>
 							<%}else{ %>
 								<%if(vo.getAdmin_yn().equals("n")){ %>
-									<li><a href="alcohol.jsp">부향률 페이지</a></li>
+									<li><a href="alcohol.jsp">향수조합 페이지</a></li>
 									<li><a href="perfumeGuide.jsp">향수조합 Guide</a></li>
 									<li><a href="goBoardMain">Community</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
