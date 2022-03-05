@@ -1,3 +1,5 @@
+<%@page import="model.CommentVO"%>
+<%@page import="model.BoardVO"%>
 <%@page import="model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -33,6 +35,17 @@
 	margin-left: 30px;
 }
 
+#table{
+	width: 1400px;
+	height: 1000px;
+}
+
+#img{
+	width: 850px;
+	height: 550px;
+}
+
+
 </style>
 </head>
 
@@ -41,6 +54,12 @@
 	<%
 		MemberVO vo = (MemberVO) session.getAttribute("vo");
 		out.print(vo);
+		
+		BoardVO bv = (BoardVO)session.getAttribute("bv");
+		out.print(bv);
+		
+		CommentVO cv = (CommentVO)session.getAttribute("cv");
+		out.print(cv);
 	%>
 
 	<!-- Wrapper -->
@@ -79,45 +98,63 @@
 
 	<!-- Main -->
 	<div id="main">
-		<form action="content.jsp" method="post">
-			<div class="article">
-				<div class="writer">
-					<p>작성자</p>
-				</div>
-
-				<div class="content">
-					<p>내용</p>
-				</div>
-
-				<div>
-					<img src="images/df.jpg" style="width: 500px; height: 800px; float: left;">
-				</div>
-			</div>
-				
-			<div class="container">
-					
-				<div class="form-group">
-					<table class="table table-striped" style="text-align: center; border:1px solid #dddddd">
-						<tr align="left">
-							<td colspan="3" style="width:1300px; height:35px;">
-								<i id='dislike' class='far fa-heart' onclick="like()"></i>
-							</td>
-						</tr>
-						<tr>
-							<td style="border-bottom: none;" valign="middle"><%=vo.getM_id() %></td>
-							<td><input type="text" style="height: 100px;"
-									class="form-contorl" placeholder="상대방을 존중하는 댓글을 남깁시다"
-									name="commentText"></td>
-							<td>
-							<button type="submit" id="btn">댓글 작성</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-				
-		</form>
+	
+		<form action="#" method="post">
 		
+			<table id="table" border="1">
+				<tr>
+					<td colspan="3">작성자</td>
+				</tr>
+				<tr class="content">
+					<td colspan="3" align="center">
+						<span>
+						바다냄새를 만들어봤습니다<br>
+						Top Note : %<br>
+						Middle Note : %<br>
+						Base Note : %<br>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><img id="img" src="images/pppp.png"></td>
+				</tr>
+				
+				<tr>
+					<td colspan="3">
+						<i id='dislike' class='far fa-heart' onclick="like()"></i>
+						<i class="far fa-comment"></i>
+					</td>
+				</tr>
+				
+				<tr>
+					<td style="border-bottom: none;" valign="middle">댓글작성자</td>
+					<td><input type="text" style="height: 120px;"
+								class="form-contorl" placeholder="상대방을 존중하는 댓글을 남깁시다"
+								name="commentText"></td>
+					<td>
+					<button type="submit" id="btn">댓글 작성</button>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>smart1</td>
+					<td colspan="2">저도 만들어보고 싶어요</td>
+				</tr>
+				
+				<tr>
+					<td>smart2</td>
+					<td colspan="2">바다냄새</td>
+				</tr>
+				
+				<tr>
+					<td>smart3</td>
+					<td colspan="2">잘 보고 갑니다 </td>
+				</tr>
+			
+			</table>
+		
+		</form>
+	
 		</div>
 
 
