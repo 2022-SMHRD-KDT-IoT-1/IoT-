@@ -62,7 +62,7 @@
 									<li><a href="alcohol.jsp">Create Perfume</a></li>
 									<li><a href="perfumeGuide.jsp">Perfume Book</a></li>
 									<li><a href="goBoardMain">Flagram</a></li>
-									<li><a href="IngredientMain.jsp">향수원료page</a></li>
+									<li><a href="goIngredientMain">향수원료page</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
 								<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
 									<li><a href="goBoardMain">Community</a></li>

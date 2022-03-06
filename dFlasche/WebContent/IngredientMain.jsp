@@ -26,7 +26,7 @@
 	;
 	
  .content {
-	height: 100vh;
+	
 	background-image: url("../../images/overlay.png"),
 		linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 		url("../../images/bg.jpg");
@@ -146,10 +146,9 @@
 			
 				<li><a href="Login.jsp">Login & Sign Up</a></li>
 			
-				<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
+				<%}else if(vo!=null){ %>
 			
-				<li><a class="active" href="goBoardMain">Community</a></li>
-				<li><a class="active" href="perfumeIngredient.jsp">향수원료Page</a></li>
+				<li><a class="active" href="goBoardMain">Flagram</a></li>
 				<li><a href="mypage.jsp">My Page</a></li>
 				<%}%>
 			</ul>
