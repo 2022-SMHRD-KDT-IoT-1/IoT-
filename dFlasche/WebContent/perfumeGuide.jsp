@@ -100,6 +100,9 @@ li {
 		-khtml-border-radius: 70px;
 		-webkit-border-radius: 70px;
 	}
+	.flexdiv{
+		margin-bottom: 10px;
+	}
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";></script>
@@ -113,7 +116,7 @@ li {
 					<nav id="nav" >
 						<ul class="links">
 							<li><a href="main.jsp">Home</a></li>
-							<li><a href="alcohol.jsp">향수조합 Page</a></li>
+							<li><a href="alcohol.jsp">Create Perfume</a></li>
 						</ul>
 						
 						<!-- <ul class="icons">
@@ -131,8 +134,8 @@ li {
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1>향수조합<br />
-									Guide</h1>
+									<h1>Perfume<br />
+									Book</h1>
 								</header>
 
 								<!-- Text stuff -->
@@ -191,7 +194,7 @@ li {
 											<p><b style="color:navy; background-color:lightblue;">FLORAL</b></p>
 											<p style="text-align: left;"><img class="floralimg" src="images/floral.png"></p>
 											
-											<ul>
+											<ul class="info">
 												<li>대중적, 기본적</li>
 												<li>꽃향기</li>
 												<li>장미, 자스민, 은방울꽃, 라일락 등</li>

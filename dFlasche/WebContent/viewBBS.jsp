@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@page import="model.BoardVO"%>
 <%@page import="model.MemberVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -102,6 +102,12 @@ body {
 th {
 	text-align: center;
 }
+
+img{
+   width:500px;
+   height:400px;
+}
+
 </style>
 </head>
 
@@ -124,8 +130,9 @@ th {
 				<%
 					} else {
 				%>
-				<li><a href="note.jsp">부향률 페이지</a></li>
-				<li><a class="active" href="goBoardMain">Community</a></li>
+				<li><a href="note.jsp">Create Perfume</a></li>
+				<li><a class="active" href="goBoardMain">Flagram</a></li>
+				<li><a href="IngredientMain">Perfume Book</a></li>
 				<li><a href="mypage.jsp">My Page</a></li>
 				<%
 					}
@@ -146,7 +153,7 @@ th {
 			%>
 		</nav>
 
-		<form action="commentService" method="get">
+		<form action="commentService">
 			<div class="board">
 				<table class="list">
 					<tr>
@@ -183,41 +190,18 @@ th {
 
 			<!-- 댓글  -->
 
-		<table id="table" border="1" style="width:70%; align: center;">
-					<!--   <tr>
-					<td colspan="3">작성자</td>
-				</tr>
-				<tr class="content">
-					<td colspan="3" align="center">
-						<span>
-						바다냄새를 만들어봤습니다<br>
-						Top Note : %<br>
-						Middle Note : %<br>
-						Base Note : %<br>
-						</span>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center"><img id="img" src="images/pppp.png"></td>
-				</tr>
-				
-				<tr>
-					<td colspan="3">
-						<i id='dislike' class='far fa-heart' onclick="like()"></i>
-						<i class="far fa-comment"></i>
-					</td>
-				</tr> -->
+		<table id="table" border="1" style="width:80px; align: center;">
 
 				<tr>
 					<td style="border-bottom: none;" valign="middle"><input
 						type="text" name="comm_writer" placeholder="작성자" style="width:130px;"></td>
-					<td><input type="text" style="height: 120px;"
+					<td><input type="text" style="height: 60px;"
 						class="form-contorl" placeholder="상대방을 존중하는 댓글을 남깁시다."
 						name="comm_content"></td>
 					<td><input type="submit" id="btn" value="댓글 작성"></td>
 				</tr>
 
-			<%-- <tr class="nameTr">
+<%--  			 <tr class="nameTr">
 					<th>작성자</th>
 					<th>내용</th>
 					<th>시간</th>
@@ -232,18 +216,15 @@ th {
 					<td><%=cvo2.getcomm_content()%></td>
 					<td><%=cvo2.getcomm_date()%></td>
 				</tr>
-				<%}%> 
-					 --%>
+				<%}%>  --%>
 			
-
-
 
 			</table>
 
 
 
 
-			<%-- 		<table class="list" border="none" style="width:53%;">
+		<table class="list" border="none" style="width:53%;">
 			<tr class="nameTr">
 				<th>작성자</th>
 				<th>내용</th>
@@ -259,7 +240,7 @@ th {
 				<td><%=cvo2.getcomm_date() %></td>
 			</tr>
 			<%} %>
-		</table> --%>
+		</table> 
 	</div>
 	</form>
 	</div>

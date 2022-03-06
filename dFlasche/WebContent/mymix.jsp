@@ -148,15 +148,7 @@ border-bottom: 1px solid #ccc;
 				<ul class="links">
 					<li class="active"><a href="mypage.jsp">My Page</a></li>
 				</ul>
-				<ul class="icons">
-					<li><a href="https://twitter.com/i/flow/login"
-						class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="https://ko-kr.facebook.com/"
-						class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a
-						href="https://www.instagram.com/accounts/login/?source=auth_switcher"
-						class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul>
+	
 			</nav>
 
 

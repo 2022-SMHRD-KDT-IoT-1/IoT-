@@ -17,7 +17,8 @@
 	url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 
 #content {
-	font-family: 'Gamja Flower', cursive;
+	font-family: fantasy;
+	font-style : normal;
 	font-size: 1.4rem;
 }
 
@@ -67,6 +68,10 @@
 	margin-top: 220px;
 }
 
+.select{
+	font-family: "fonts/icomoon.ttf";
+}
+
 </style>
 
 <script src="js/jquery-3.6.0.js"></script>
@@ -85,7 +90,7 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
-					<li class="active"><a href="alcohol.jsp">알코올 농도 선택 페이지</a></li>
+					<li class="active"><a href="alcohol.jsp">Alcohol Choice</a></li>
 				</ul>
 				
 				<!-- <ul class="icons">
@@ -109,7 +114,7 @@
 					<header class="major">
 						<p id="content">
 							원하는 지속시간에 따라 향수의 종류를 선택하시면 됩니다.<br>상세한 설명을 원하신다면 사진을 클릭해주세요!<br>
-							가이드를 원하신다면 <a href="perfumeGuide.jsp">부향률 가이드</a>로 이동해주세요.
+							가이드를 원하신다면 <a href="perfumeGuide.jsp">Perfume Book</a>으로 이동해주세요.
 						</p>
 					</header>
 
@@ -117,34 +122,34 @@
 						<img onclick="show1()" width="180px;" height="360px;" src="images/perfume.png">
 						<p id="perfume"></p>
 					</div>
-					<br>
+					<br><br>
 
 					<div class="p">
 						<img onclick="show2()" width="180px;" height="360px;" src="images/edp.png">
-						<p id="EDP"></p>
+						<p id="EDP" class="pp"></p>
 					</div>
-					<br>
+					<br><br>
 
 					<div class="p">
 						<img onclick="show3()" width="180px;" height="360px;" src="images/edt.png">
-						<p id="EDT"></p>
+						<p id="EDT" class="pp"></p>
 					</div>
-					<br>
+					<br><br>
 
 					<div class="p">
 						<img onclick="show4()" width="180px;" height="360px;" src="images/edc.png">
-						<p id="EDC"></p>
+						<p id="EDC" class="pp"></p>
 					</div>
 
-					<br>
+					<br><br>
 					<div>
 						<br> 
-						<label for="perfume">향수 종류 선택</label> 
-						<select name="alcohol">
-							<option name="perfume" value="0">퍼퓸(Perfume - 알코올80%)</option>
-							<option name="perfume" value="1">오 드 퍼퓸(Eau de Perfume - 알코올85%)</option>
-							<option name="perfume" value="2">오 드 뚜왈렛(Eau de Toillette - 알코올90%)</option>
-							<option name="perfume" value="3">오 드 코롱(Eau de Cologne - 알코올95%)</option>
+						<label for="perfume">향수 종류 선택(30ml 기준)</label> 
+						<select name="alcohol" class="select">
+							<option name="perfume" value="0">퍼퓸(Perfume - 알코올 24g)</option>
+							<option name="perfume" value="1">오 드 퍼퓸(Eau de Perfume - 알코올 25.5g)</option>
+							<option name="perfume" value="2">오 드 뚜왈렛(Eau de Toillette - 알코올 27g)</option>
+							<option name="perfume" value="3">오 드 코롱(Eau de Cologne - 알코올 28.5)</option>
 						</select>
 					</div>
 					<br>

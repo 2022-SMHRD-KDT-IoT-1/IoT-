@@ -36,7 +36,7 @@ public class CommentDAO {
 	public List<CommentVO> selectComment() {
 		
 		SqlSession session = sqlSessionFactory.openSession(); 
-		List<CommentVO> list = session.selectList("commentList");
+		List<CommentVO> list = session.selectList("viewComment");
 		session.close(); 
 		return list;
 		

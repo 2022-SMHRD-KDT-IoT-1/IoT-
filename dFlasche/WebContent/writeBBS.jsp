@@ -89,17 +89,22 @@
 		MemberVO vo = (MemberVO) session.getAttribute("vo");
 	%>
 	<div class="content">
-			<nav id="nav">
-				<ul class="links">
-					<li><a href="main.jsp">d Flasche</a></li>
-					<%if(vo==null){%>
-					<li><a href="Login.jsp">Login & Sign Up</a></li>
-					<%}else{ %>
-					<li><a href="note.jsp">부향률 페이지</a></li>
-					<li><a class="active" href="goBoardMain">Community</a></li>
-					<li><a href="mypage.jsp">My Page</a></li>
-					<%} %>
-				</ul>
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="main.jsp">d Flasche</a></li>
+							<%if(vo==null){%>
+								<li><a href="Login.jsp">Login & Sign Up</a></li>
+								<%}else if(vo!=null && !vo.getM_id().equals("admin")){ %>
+									<li><a href="alcohol.jsp">Create Perfume</a></li>
+									<li><a href="perfumeGuide.jsp">Perfume Book</a></li>
+									<li><a href="goBoardMain">Flagram</a></li>
+									<li><a href="mypage.jsp">My Page</a></li>
+								<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
+									<li><a href="goBoardMain">Community</a></li>
+									<li><a href="perfumeIngredient.jsp">향수원료page</a></li>
+									<li><a href="mypage.jsp">My Page</a></li>
+								<%} %>
+						</ul>
 				<ul class="icons">
 					<%if(vo!=null){%>
 					<li><%=vo.getM_nick()%>님</li>

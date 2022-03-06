@@ -18,18 +18,18 @@
 	;
 
 #content {
-	font-family: 'Gamja Flower', cursive;
-	font-size: 1.4rem;
+	font-family: monospacem, normal;
+	font-size: 1.7rem;
 }
 
 #nameTr {
-	font-family: 'Gamja Flower', cursive;
+	font-family: 'initial';
 	font-size: 1.2rem;
 	text-align: center;
 }
 
 #sumTr {
-	font-family: 'Gamja Flower', cursive;
+	font-family: 'initial';
 	font-size: 1.2rem;
 	text-align: center;
 }
@@ -37,6 +37,15 @@
 .input {
 	text-align: center;
 	width: 170px;
+}
+p{
+ 	font-family: 'initial', normal;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.select{
+	font-family: monospace;
 }
 </style>
 </head>
@@ -58,10 +67,10 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
-					<li><a href="note.jsp">부향률 Page</a></li>
+					<li><a href="alcohol.jsp">Create Perfume</a></li>
 				</ul>
 				
-				<ul class="icons">
+				<!-- <ul class="icons">
 					<li><a href="https://twitter.com/i/flow/login"
 						class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="https://ko-kr.facebook.com/"
@@ -69,7 +78,8 @@
 					<li><a
 						href="https://www.instagram.com/accounts/login/?source=auth_switcher"
 						class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul>
+				</ul> -->
+				
 			</nav>
 
 			<!-- Main -->
@@ -79,8 +89,14 @@
 				<section class="post">
 					<header class="major">
 						<p id="content">
-							자신의 취향에 따라 부향률을 정해주세요.<br>
+							세계 3개 마요는 참치마요, 치킨마요, 다른 향수 쓰지마요<br>
+							d Flasche에서 우리랑 향수 만들자!(^_-)
 						</p>
+						
+						<!-- <p id="content">
+							3개 마요는 참치마요,<br>
+							d Flasche에서 우리랑 향수 만들자!(^_-)
+						</p> -->
 					</header>
 
 					<div class="image main">
@@ -100,7 +116,7 @@
 							<tr id="notetr1">
 								<td align="center">Top Note</td>
 								<td class="input">
-								<select name="pname1"
+								<select name="pname1" class="select"
 										onchange="selectForm(this.options[this.selectedIndex].value)"
 										style="width: 200">
 										<option value="0">시트러스 버베나</option>
@@ -115,7 +131,7 @@
 							<tr id="notetr2">
 								<td align="center">Middle Note</td>
 								<td class="input">
-								<select name="pname2">
+								<select name="pname2" class="select">
 										<option value="0">라벤더</option>
 										<option value="1">시나몬</option>
 										<option value="2">라일락</option>
@@ -128,7 +144,7 @@
 							<tr id="notetr3">
 								<td align="center">Base Note</td>
 								<td class="input">
-								<select name="pname3">
+								<select name="pname3" class="select">
 										<option value="0">화이트 머스크</option>
 										<option value="1">벤조인</option>
 										<option value="2">샌달우드</option>
@@ -143,7 +159,7 @@
 									<button type="button" onclick="sum()">합계</button>
 								</td>
 								<td>
-									<hr>
+									<hr class="sum">
 								</td>
 							</tr>
 
@@ -178,9 +194,9 @@
 		
 		<script type="text/javascript">
 			function sum() {
-				let num1 = $('input[name=num1]').val()
-				let num2 = $('input[name=num2]').val()
-				let num3 = $('input[name=num3]').val()
+				var num1 = $('input[name=num1]').val()
+				var num2 = $('input[name=num2]').val()
+				var num3 = $('input[name=num3]').val()
 				
 				$.ajax({
 					url : 'notesum',
@@ -193,8 +209,8 @@
 					
 					success : function(res) {
 						console.log(res);
-						
-						$('hr').after('<p>' + res + '</p>');
+						$('.sum').empty();
+						$('.sum').append(res);
 					},
 					error : function() { alert("error"); }
 					

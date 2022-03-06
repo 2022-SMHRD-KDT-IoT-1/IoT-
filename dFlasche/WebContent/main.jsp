@@ -16,6 +16,11 @@
 				.nick{
 					margin-bottom:0;
 					margin-right:-15px;
+					font-family: initial;
+				}
+				
+				.p{
+					font-family: initial;
 				}
 
 			</style>
@@ -32,7 +37,7 @@
 					<div id="intro">
 						<h1>d<br />
 							flasche</h1>
-						<p>나만의 향수를 직접 만들어보는<br /> Smart IoT Perfume</p>
+						<p class="p">나만의 향수를 직접 만들어보는<br /> Smart IoT Perfume</p>
 						<!-- 			
 							<ul class="actions">
 								<li>
@@ -54,9 +59,10 @@
 							<%if(vo==null){%>
 								<li><a href="Login.jsp">Login & Sign Up</a></li>
 								<%}else if(vo!=null && !vo.getM_id().equals("admin")){ %>
-									<li><a href="alcohol.jsp">부향률 페이지</a></li>
-									<li><a href="perfumeGuide.jsp">향수조합 Guide</a></li>
-									<li><a href="goBoardMain">Community</a></li>
+									<li><a href="alcohol.jsp">Create Perfume</a></li>
+									<li><a href="perfumeGuide.jsp">Perfume Book</a></li>
+									<li><a href="goBoardMain">Flagram</a></li>
+									<li><a href="IngredientMain.jsp">향수원료page</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
 								<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
 									<li><a href="goBoardMain">Community</a></li>
@@ -87,7 +93,7 @@
 									<%=vo.getM_nick()%>님
 								</li>
 							<li><a href="LogoutService" class="button primary small"
-									style="padding: 0 10px; margin:0 5px; position: relative; bottom:30px;">Logout</a></li>
+									style="padding: 0 10px; margin:0 5px; position: relative;">Logout</a></li>
 						</ul>
 						<%} %>
 					</nav>

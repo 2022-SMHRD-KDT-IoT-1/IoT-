@@ -64,7 +64,7 @@ ul.action.stacked li:first-child {
 
 			<!-- Header -->
 			<header id="header">
-				<a href="main.jsp" class="logo">Home</a>
+				<a href="main.jsp" class="logo" style="position:relative; left:-50px;">Home</a>
 			</header>
 
 			<!-- Main -->
@@ -78,13 +78,12 @@ ul.action.stacked li:first-child {
 						</h2>
 					</header>
 
-					<div class="mymenu" style="margin-left: 6rem;">
+					<div class="mymenu" style="position:relative; left:150px">
 						<ul class="action stacked">
 						<li><a href="update.jsp" class="button primary">Á¤º¸º¯°æ</a></li>
 						<li><a href="#" id="delete" class="button primary" onclick="deleteCheck()">È¸¿øÅ»Åð</a></li>
 						<li><a href="mymix.jsp" class="button primary">³ªÀÇ¹èÇÕ</a></li>
 						<li><a href="writeBBS.jsp" class="button primary">¹èÇÕ°øÀ¯</a></li>
-						<li><a href="#" class="button primary">»Ð»Ð»Ð»Ð</a></li>
 						</ul>
 					</div>
 					</section>

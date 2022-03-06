@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,14 +24,13 @@ public class commentService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("euc-kr");
-		
+//		request.setCharacterEncoding("euc-kr");
 		
 		// queryString으로 가져온 seq 파라미터 수집
 		int article_seq = Integer.parseInt(request.getParameter("article_seq"));
-		String m_id = request.getParameter("comm_writer");
+		
+		String m_id = request.getParameter("comm_writer"); 
 		String comm_content = request.getParameter("comm_content");
-
 
 		System.out.println(m_id);
 		System.out.println(comm_content);
@@ -45,7 +46,7 @@ public class commentService extends HttpServlet {
 		if (cnt > 0) {
 			System.out.println("입력성공");
 			request.setAttribute("cvo", cvo);
-			RequestDispatcher rd = request.getRequestDispatcher("commentList");
+			RequestDispatcher rd = request.getRequestDispatcher("goBoardMain");
 			rd.forward(request, response);
 
 		} else {

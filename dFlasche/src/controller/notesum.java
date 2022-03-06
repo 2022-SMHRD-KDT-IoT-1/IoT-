@@ -16,11 +16,11 @@ public class notesum extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		int num1 = Integer.parseInt(request.getParameter("num1"));
-		int num2 = Integer.parseInt(request.getParameter("num2"));
-		int num3 = Integer.parseInt(request.getParameter("num3"));
+		Float num1 = Float.parseFloat(request.getParameter("num1"));
+		Float num2 = Float.parseFloat(request.getParameter("num2"));
+		Float num3 = Float.parseFloat(request.getParameter("num3"));
 		
-		int result = num1 + num2 + num3;
+		Float result = num1 + num2 + num3;
 		
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();

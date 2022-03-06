@@ -21,6 +21,8 @@ public class commentList extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("euc-kr");
+		
 		int article_seq = Integer.parseInt(request.getParameter("article_seq"));
 		
 		CommentDAO dao = new CommentDAO();

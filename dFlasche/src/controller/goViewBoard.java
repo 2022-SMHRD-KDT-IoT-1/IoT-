@@ -18,7 +18,8 @@ public class goViewBoard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		
 		// 1. 파라미터 수집
 		int article_seq = Integer.parseInt(request.getParameter("article_seq"));
 		
@@ -30,7 +31,7 @@ public class goViewBoard extends HttpServlet {
 		request.setAttribute("bvo", bvo);
 		
 		// 4. 포워드방식으로 페이지 이동
-		RequestDispatcher rd = request.getRequestDispatcher("viewBBS.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("commentList");
 		rd.forward(request, response);
 	
 	}

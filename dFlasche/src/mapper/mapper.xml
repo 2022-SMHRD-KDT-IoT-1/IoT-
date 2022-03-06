@@ -57,7 +57,7 @@
 	</insert> 
 	
 	<select id="viewComment" resultType="model.CommentVO">
-		select * from tbl_comment where article_seq = #{article_seq}
+		select * from tbl_comment order by comm_date desc
 	</select>
 	
 	<select id="IdCheck" resultType="model.MemberVO">
