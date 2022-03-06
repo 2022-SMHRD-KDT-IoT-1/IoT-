@@ -100,7 +100,7 @@
 									<li><a href="goBoardMain">Flagram</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
 								<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
-									<li><a href="goBoardMain">Community</a></li>
+									<li><a href="goBoardMain">Flagram</a></li>
 									<li><a href="perfumeIngredient.jsp">향수원료page</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
 								<%} %>

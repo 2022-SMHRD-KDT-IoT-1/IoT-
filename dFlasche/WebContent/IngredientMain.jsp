@@ -139,18 +139,22 @@
 	 
 	
 	<div class="content"> 
-		<nav id="nav" style="background-color: gray;">
+		<nav id="nav" style="background-color: gray; opacity: 0.5;">
 			<ul class="links">
 				<li><a href="main.jsp">d Flasche</a></li>
-				<%if (vo == null) {%>
-			
-				<li><a href="Login.jsp">Login & Sign Up</a></li>
-			
-				<%}else if(vo!=null){ %>
-			
-				<li><a class="active" href="goBoardMain">Flagram</a></li>
-				<li><a href="mypage.jsp">My Page</a></li>
-				<%}%>
+				<%if(vo==null){%>
+					<li><a href="Login.jsp">Login & Sign Up</a></li>
+				<%}else if(vo!=null && !vo.getM_id().equals("admin")){ %>
+					<li><a href="alcohol.jsp">Create Perfume</a></li>
+					<li><a href="perfumeGuide.jsp">Perfume Book</a></li>
+					<li><a href="goBoardMain">Flagram</a></li>
+					<li><a href="goIngredientMain">향수원료page</a></li>
+					<li><a href="mypage.jsp">My Page</a></li>
+				<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
+					<li><a href="goBoardMain">Flagram</a></li>
+					<li><a href="perfumeIngredient.jsp">향수원료page</a></li>
+					<li><a href="mypage.jsp">My Page</a></li>
+					<%} %>
 			</ul>
 			
 			<ul class="icons">
