@@ -30,7 +30,7 @@ public class goViewBoard extends HttpServlet {
 		request.setAttribute("bvo", bvo);
 		
 		// 4. 포워드방식으로 페이지 이동
-		RequestDispatcher rd = request.getRequestDispatcher("commentList");
+		RequestDispatcher rd = request.getRequestDispatcher("viewBBS.jsp");
 		rd.forward(request, response);
 	
 	}

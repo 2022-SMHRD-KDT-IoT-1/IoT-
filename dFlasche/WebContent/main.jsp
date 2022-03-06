@@ -53,6 +53,22 @@
 							<li class="active"><a href="main.jsp">d Flasche</a></li>
 							<%if(vo==null){%>
 								<li><a href="Login.jsp">Login & Sign Up</a></li>
+								<%}else if(vo!=null && !vo.getM_id().equals("admin")){ %>
+									<li><a href="alcohol.jsp">부향률 페이지</a></li>
+									<li><a href="perfumeGuide.jsp">향수조합 Guide</a></li>
+									<li><a href="goBoardMain">Community</a></li>
+									<li><a href="mypage.jsp">My Page</a></li>
+								<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
+									<li><a href="goBoardMain">Community</a></li>
+									<li><a href="perfumeIngredient.jsp">향수원료page</a></li>
+									<li><a href="mypage.jsp">My Page</a></li>
+								<%} %>
+						</ul>
+							
+							
+							
+							<%-- <%if(vo==null){%>
+								<li><a href="Login.jsp">Login & Sign Up</a></li>
 							<%}else{ %>
 								<%if(vo.getAdmin_yn().equals("n")){ %>
 									<li><a href="alcohol.jsp">부향률 페이지</a></li>
@@ -64,7 +80,7 @@
 									<li><a href="#">배합가이드추가</a></li>
 						<%}%>
 						<%}%>
-						</ul>
+						</ul> --%>
 						<ul class="icons" style="position:relative; left:35px;">
 							<%if(vo!=null){%>
 								<li class="nick">

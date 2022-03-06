@@ -31,6 +31,7 @@
 		linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
 		url("../../images/bg.jpg");
 	padding: 3px;
+	background-color: white;
 }  
 
 .masonry-container {
@@ -61,7 +62,7 @@
     }
 }
 
-img{
+#img{
 	width:300px;
 	height:300px;
 }
@@ -114,18 +115,17 @@ img{
       }
     }
     
-    #titlep{
-    	color:white; 
-    	font-size:2.8rem;
-    	font-family: 'Nanum Gothic Coding', monospace;
-    	text-align: center;
-    }
+/*     #titlep{
+    	align:center;
+    	width:60%;
+    } */
     
     #bodydiv{
-    	background: #757F9A;  /* fallback for old browsers */
-		background: -webkit-linear-gradient(to top, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to top, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    	/* background: #757F9A;   fallback for old browsers 
+		background: -webkit-linear-gradient(to top, #D7DDE8, #757F9A);  Chrome 10-25, Safari 5.1-6 
+		background: linear-gradient(to top, #D7DDE8, #757F9A); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		
+		
     }
     
 </style>
@@ -138,46 +138,53 @@ img{
 	List<IngredientVO> list = (List<IngredientVO>) request.getAttribute("list"); %>
 	 
 	
-	 <!-- <div class="content"> -->
-			<nav id="nav">
-				<ul class="links">
-					<li><a href="main.jsp">d Flasche</a></li>
-					<%if(vo==null){%>
-					<li><a href="Login.jsp">Login & Sign Up</a></li>
-					<%}else{ %>
-					<li><a href="note.jsp">부향률 페이지</a></li>
-					<li><a class="active" href="goBoardMain">Community</a></li>
-					<li><a href="mypage.jsp">My Page</a></li>
-					<li><a href="perfumeIngredient.jsp">원료 등록하기</a></li>
-					<%} %>
-				</ul>
-				<ul class="icons">
-					<%if(vo!=null){%>
-					<li><%=vo.getM_nick()%>님</li>
-				</ul>
-				<ul class="actions small">
-					<li><a href="LogoutService" class="button primary small"
-						style="padding: 0 10px; margin: 0 5px;">Logout</a></li>
-				</ul>
-				<%} %>
-			</nav>
-			 
-		<div id="bodydiv" style="margin-top:3rem;">
-		 <p id = titlep>향수 원료 목록</p>    	
+	<div class="content"> 
+		<nav id="nav" style="background-color: gray;">
+			<ul class="links">
+				<li><a href="main.jsp">d Flasche</a></li>
+				<%if (vo == null) {%>
+			
+				<li><a href="Login.jsp">Login & Sign Up</a></li>
+			
+				<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
+			
+				<li><a class="active" href="goBoardMain">Community</a></li>
+				<li><a class="active" href="perfumeIngredient.jsp">향수원료Page</a></li>
+				<li><a href="mypage.jsp">My Page</a></li>
+				<%}%>
+			</ul>
+			
+			<ul class="icons">
+				<%if (vo != null) {%>
+			
+				<li><%=vo.getM_nick()%>님</li>
+			</ul>
+			<ul class="actions small">
+				<li><a href="LogoutService" class="button primary small"
+				style="padding: 0 10px; margin: 0 5px;">Logout</a></li>
+			</ul>
+				<%}%>
+			
+		
+		</nav>
+	
+	
+	<div> <img src="images/ingredientimg.png" style="width:80%; margin-left:10rem; margin-top:4rem; margin-bottom:2rem;"> </div>    	
+		<div id="bodydiv" style="margin-left:5rem;">
         <%for(IngredientVO ivo : list){ %>
         <div id="columns">
-	     <figure style="text-align: center; width:80%;">
-	      <figcaption class="title">no<%=ivo.getP_seq()%>.<%=ivo.getP_name() %></figcaption>
-	      <figcaption class="text"><%=ivo.getP_date() %></figcaption>
+	     <div style="text-align: center; color:black; width:80%;">
+	      <span class="title">no<%=ivo.getP_seq()%>.<%=ivo.getP_name() %></span>
+	      <%-- <span class="text"><%=ivo.getP_date() %></span> --%>
 	      	<a href="goViewIngredient?num=<%=ivo.getP_seq()%>">
-			<img src="img/<%=ivo.getP_file()%>">
+			<img id="img" src="img/<%=ivo.getP_file()%>" style="box-shadow: 5px 5px 5px #000;">
 	      	</a>
-	    </figure>
+	    </div>
         </div>
       	<%} %>
 		</div>
 
-	
+	</div>
 	
 
 	<!-- Scripts -->

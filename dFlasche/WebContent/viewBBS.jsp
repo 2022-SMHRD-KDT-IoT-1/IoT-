@@ -82,7 +82,11 @@ blockquote:before, blockquote:after, q:before, q:after {
 	content: none;
 }
 
-table, tr {
+table{
+	width: 1000px !important;
+	margin: 0px auto !important;
+	text-align: center !important;
+	margin-top: 1rem !important;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -179,8 +183,8 @@ th {
 
 			<!-- 댓글  -->
 
-			<table id="table" border="1">
-				<!-- <tr>
+		<table id="table" border="1" style="width:70%; align: center;">
+					<!--   <tr>
 					<td colspan="3">작성자</td>
 				</tr>
 				<tr class="content">
@@ -206,22 +210,21 @@ th {
 
 				<tr>
 					<td style="border-bottom: none;" valign="middle"><input
-						type="text" name="comm_writer" placeholder="작성자"></td>
+						type="text" name="comm_writer" placeholder="작성자" style="width:130px;"></td>
 					<td><input type="text" style="height: 120px;"
 						class="form-contorl" placeholder="상대방을 존중하는 댓글을 남깁시다."
 						name="comm_content"></td>
 					<td><input type="submit" id="btn" value="댓글 작성"></td>
 				</tr>
 
-				<tr class="nameTr">
+			<%-- <tr class="nameTr">
 					<th>작성자</th>
 					<th>내용</th>
 					<th>시간</th>
-				</tr>
+				 </tr>	
 
- 				<%
-					for (CommentVO cvo2 : list) {
-				%>
+ 				 <%for (CommentVO cvo2 : list) {%>
+									
 				<tr></tr>
 
 				<tr class="nameTr">
@@ -229,38 +232,14 @@ th {
 					<td><%=cvo2.getcomm_content()%></td>
 					<td><%=cvo2.getcomm_date()%></td>
 				</tr>
-				<%
-					}
-				%> 
+				<%}%> 
+					 --%>
+			
 
 
 
 			</table>
 
-			<!-- 			<div class="board2">
-				<table class="list2" border="none">
-
-					<tr class="nameTr">
-						<td>작성자</td>
-						<td><input type="text" name="comm_writer" placeholder="작성자"
-							style="width: 150px;"></td>
-					</tr>
-
-					<tr></tr>
-
-					<tr class="nameTr">
-						<td>댓글 작성</td>
-						<td><input type="text" name="comm_content"
-							placeholder="댓글을 작성해 주세요." autofocus="autofocus"></td>
-					</tr>
-
-					<tr></tr>
-
-					<tr class="nameTr">
-						<td colspan="2" style="align: center;"><input type="submit"
-							value="댓글작성"> <input type="reset" value="초기화"></td>
-					</tr>
-				</table> -->
 
 
 

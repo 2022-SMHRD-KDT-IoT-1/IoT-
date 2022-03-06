@@ -30,6 +30,7 @@
 		margin: 0px auto !important;
 		text-align: center !important;
 		margin-top: 100px !important;
+		color:white;
 	}
 	#list{
 		margin: 0px auto !important;

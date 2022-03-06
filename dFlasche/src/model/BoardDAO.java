@@ -47,11 +47,11 @@ public class BoardDAO {
 		return list;
 	}
 	
-	public BoardVO viewBoard(int num) {
+	public BoardVO viewBoard(int article_seq) {
 		
 		SqlSession session = sqlSessionFactory.openSession();
 		
-		BoardVO vo = session.selectOne("viewBoard", num);
+		BoardVO vo = session.selectOne("viewBoard", article_seq);
 		
 		session.close();
 		
