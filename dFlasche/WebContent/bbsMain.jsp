@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>커뮤니티</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -63,6 +63,7 @@ img{
       border: 5px solid transparent;
       column-gap: 15px;
       color:white;
+      margin:20px;
     }
 
     #columns figure {
@@ -71,6 +72,7 @@ img{
       margin-bottom: 15px;
       padding: 10px;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      width:500px;
     }
 
     #columns figure img {
@@ -79,7 +81,6 @@ img{
 
     #columns .text {
       border-top: 1px solid rgba(0, 0, 0, 0.2);
-      padding: 10px;
       margin-top: 10px;
     }
 
@@ -98,10 +99,14 @@ img{
         column-gap: 0px;
       }
 
-      #columns figure {
-        width: 100%;
-      }
+      
     }
+    
+    .nick{
+		margin-bottom:0;
+		margin-right:-15px;
+				}
+    
 </style>
 </head>
 
@@ -113,27 +118,27 @@ img{
 	%>
 	
 	 	<div class="content">
-			<nav id="nav">
+			<nav id="nav" style="position:relative;">
 				<ul class="links">
 					<li><a href="main.jsp">d Flasche</a></li>
 					<%if(vo==null){%>
 					<li><a href="Login.jsp">Login & Sign Up</a></li>
 					<%}else{ %>
-					<li><a href="alcohol.jsp">부향률 페이지</a></li>
+					<li><a href="note.jsp">부향률 페이지</a></li>
 					<li><a class="active" href="goBoardMain">Community</a></li>
 					<li><a href="mypage.jsp">My Page</a></li>
 					<%} %>
 				</ul>
-				<ul class="icons">
-					<%if(vo!=null){%>
-					<li><%=vo.getM_nick()%>님</li>
-				</ul>
-				<ul class="actions small">
-					<li><a href="LogoutService" class="button primary small"
-						style="padding: 0 10px; margin: 0 5px;">Logout</a></li>
-				</ul>
-				<%} %>
-			</nav>
+						<ul class="icons" style="position:relative; left:35px;">
+							<%if(vo!=null){%>
+								<li class="nick">
+									<%=vo.getM_nick()%>님
+								</li>
+							<li><a href="LogoutService" class="button primary small"
+									style="padding: 0 10px; margin:0 5px; position: relative; bottom:30px;">Logout</a></li>
+						</ul>
+						<%} %>
+					</nav>
 			 
 	<div class="masonry-container">
     	<div class="masonry-item">
@@ -141,19 +146,22 @@ img{
         <%for(BoardVO bvo : list){ %>
         <div id="columns">
 	     <figure>
-	      <figcaption class="title"><%=bvo.getM_id() %></figcaption>
-	      <figcaption class="text"><%=bvo.getArticle_date()%></figcaption>
+	      <figcaption class="title"><%=bvo.getM_id()%>
+	      <span style="font-size:1px; display:inline-block; text-align:right;"><%=bvo.getArticle_date()%></span></figcaption>
 	      	<a href="goViewBoard?num=<%=bvo.getArticle_seq()%>">
 			<img src="img/<%=bvo.getArticle_file1()%>">
 	      	</a>
-	      <figcaption class="like">
+	      <figcaption class="text" style="margin:50px 0 -15px 5px;">
 	      <% if (Integer.parseInt(bvo.getArticle_cnt()) == 0) {%> 
-	      <div id="btn_like"><i id='dislike' class='far fa-heart' onclick="like()"></i>
-	      <%}%><a href="main.jsp" style="color:white;"><i id="comment" class="fa-solid fa-comment" style="margin-left:10px;"></i></a></div> 
+	      <a href="#"><i style="color:white;" id='dislike' class='far fa-heart' onclick="like()"></i></a>
+	      <%}else{%>
+	      <a href="main.jsp" style="color:white;"><i id="comment" class="fas fa-heart" onclick="dislike()"></i></a>
+      	<%}%>
+	      <a href="main.jsp" style="color:white;"><i id="comment" class="fa-solid fa-comment" style="margin-left:10px;"></i></a>
 	      </figcaption>
 	    </figure>
         </div>
-      	<%} %>
+      	<%}%>
 		</div>
 	</div>
 	</div>

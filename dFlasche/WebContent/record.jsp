@@ -65,7 +65,7 @@
 				<div id = "board">
 				<!-- Post -->
 					<header class="major">
-						<p id="content" name="base">님이 선택하신 향수는 오드퍼퓸, Top Note의 시트러스 버베나 : 1g, Middle Note의 라벤더 : 0.5g, Base Note의 화이트 머스크 : 1.5g 입니다.</p>
+						<p id="content" name="base">만든 향수의 이름과 특징을 적어주세요.</p>
 					</header>
 				<form action="record" method="post" enctype="multipart/form-data">
 				<table id="list">

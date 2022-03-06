@@ -105,11 +105,13 @@
 					</header>
 			<p style="text-align:center;">
 					<button id="create" type="submit" class="button primary" onclick="mymix()">
-					추출하기
+					저장하기
 					</button>
-					<button class="button primary">
-					뒤로가기
+					<a href="main.jsp">
+					<button type="button" class="button primary">
+					HOME
 					</button>
+					</a>
 					</p>
 				</form>
 			</section>

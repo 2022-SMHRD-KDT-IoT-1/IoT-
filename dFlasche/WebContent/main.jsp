@@ -60,7 +60,7 @@
 									<li><a href="goBoardMain">Community</a></li>
 									<li><a href="mypage.jsp">My Page</a></li>
 								<%}else if(vo.getAdmin_yn().equals("y")){%>
-									<li><a href="#">향료추가</a></li>
+									<li><a href="perfumeIngredient.jsp">향료추가</a></li>
 									<li><a href="#">배합가이드추가</a></li>
 						<%}%>
 						<%}%>

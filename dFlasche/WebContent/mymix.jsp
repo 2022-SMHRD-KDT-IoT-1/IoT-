@@ -126,10 +126,6 @@ vertical-align: top;
 border-bottom: 1px solid #ccc;
 }
 
- img{
-	width:300px;
-	height: 300px;
-}
 
 </style>
 
@@ -152,8 +148,7 @@ border-bottom: 1px solid #ccc;
 				<ul class="links">
 					<li class="active"><a href="mypage.jsp">My Page</a></li>
 				</ul>
-				
-				<!-- <ul class="icons">
+				<ul class="icons">
 					<li><a href="https://twitter.com/i/flow/login"
 						class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="https://ko-kr.facebook.com/"
@@ -161,8 +156,7 @@ border-bottom: 1px solid #ccc;
 					<li><a
 						href="https://www.instagram.com/accounts/login/?source=auth_switcher"
 						class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul> -->
-				
+				</ul>
 			</nav>
 
 
@@ -172,8 +166,6 @@ border-bottom: 1px solid #ccc;
 			
 			MemberVO vo = (MemberVO)request.getAttribute("vo");
 			List<PerfumeVO> list = (List<PerfumeVO>)request.getAttribute("list");
-			
-			
 			%>
 				
 				<!-- Post -->
@@ -197,7 +189,7 @@ border-bottom: 1px solid #ccc;
 			</thead>
 			</tbody>
 			<tr>
-				<td scope="row" rowspan="4"> <img alt="" src="img/<%=pvo.getUp_file() %>"> </td>
+				<td scope="row" rowspan="4" style="height:0;"> <div style="height:100%"><img style="height:100%" alt="" src="img/<%=pvo.getUp_file() %>"></div></td>
 				<td colspan="3">상세 정보</td>
 			</tr>			
 			<tr>
