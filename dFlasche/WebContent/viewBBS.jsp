@@ -133,7 +133,7 @@ img{
 				<li><a href="note.jsp">Create Perfume</a></li>
 				<li><a class="active" href="goBoardMain">Flagram</a></li>
 				<li><a href="IngredientMain">Perfume Book</a></li>
-				<li><a href="goIngredientMain">향수원료page</a></li>
+				<li><a href="goIngredientMain">Ingredient</a></li>
 				<li><a href="mypage.jsp">My Page</a></li>
 				<%
 					}
