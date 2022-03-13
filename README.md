@@ -35,7 +35,7 @@
 ![image](https://user-images.githubusercontent.com/98814249/158011230-792f3298-ba98-4e15-986f-73e8b373d4c0.png)
 
 ## 7. 대화도
-(추가예정)
+
 ## 8. 활용 사례
 ![image](https://user-images.githubusercontent.com/98814249/158011442-a3d76972-0317-4229-b446-d2a59e996fb9.png)
 ---
