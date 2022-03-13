@@ -20,7 +20,7 @@
 - 디자인도구 : PowerPoint
 
 ## 4. 대표 이미지
-![image](https://user-images.githubusercontent.com/98814249/158010334-19a2f945-025e-474b-896e-dfce9f4b8501.png)
+![스마트 향수 로고](https://user-images.githubusercontent.com/99242608/158059389-cdee0a62-3a22-435d-8327-7e3dc52b699e.jpg)
 ---
 
 ## 5. 제품 설명
@@ -34,7 +34,7 @@
 ![image](https://user-images.githubusercontent.com/98814249/158011209-8fc56b76-9b03-4f3d-8ff3-223151a8aa7c.png)
 ![image](https://user-images.githubusercontent.com/98814249/158011230-792f3298-ba98-4e15-986f-73e8b373d4c0.png)
 
-## 7. 대화도
+## 7. 배선도
 ![스마트 향수 배선도](https://user-images.githubusercontent.com/99242608/158059357-e5d5d1e7-a388-464f-bf3c-7bfc76f87e7d.png)
 
 ## 8. 활용 사례
