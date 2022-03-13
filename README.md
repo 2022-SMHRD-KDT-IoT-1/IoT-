@@ -34,9 +34,9 @@
 ![image](https://user-images.githubusercontent.com/98814249/158011209-8fc56b76-9b03-4f3d-8ff3-223151a8aa7c.png)
 ![image](https://user-images.githubusercontent.com/98814249/158011230-792f3298-ba98-4e15-986f-73e8b373d4c0.png)
 
-## 7. 회로도
-
-## 8. 활용 사진 예시
+## 7. 대화도
+(추가예정)
+## 8. 활용 사례
 ![image](https://user-images.githubusercontent.com/98814249/158011442-a3d76972-0317-4229-b446-d2a59e996fb9.png)
 ---
 ![image](https://user-images.githubusercontent.com/98814249/158011715-90576439-5a79-46bf-aaf4-fb896dcf8c9a.png)
