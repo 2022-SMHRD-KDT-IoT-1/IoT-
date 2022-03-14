@@ -27,7 +27,6 @@ public class writeIngredient extends HttpServlet {
 		
 		MultipartRequest multi = new MultipartRequest(request, 
 				savePath, maxSize, encoding, new DefaultFileRenamePolicy());
-	
 		
 		// 1. 파라미터 수집
 		String p_type = multi.getParameter("type");

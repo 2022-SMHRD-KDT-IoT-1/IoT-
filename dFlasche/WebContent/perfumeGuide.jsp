@@ -103,7 +103,18 @@ li {
 	.flexdiv{
 		margin-bottom: 10px;
 	}
-
+	.info{
+		font-size: 1rem;
+	}
+	.comment{
+		text-align: left; 
+		font-size: 1.1rem;
+	}
+	.listimg{
+		 text-align: center; 
+		 width:90%;
+	}
+	
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";></script>
 	</head>
@@ -241,32 +252,32 @@ li {
 									
 									<div onclick="text1()">
 										<dt>Fruity</dt>
-										<p id="fruity" style="font-size: 1rem"></p>
+										<p id="fruity" class="pinfo"></p>
 									</div>	
 									
 									<div onclick="text2()">
 										<dt>Green</dt>
-										<p id="green" style="font-size: 1rem"></p>
+										<p id="green" class="pinfo"></p>
 									</div>	
 										
 									<div onclick="text3()">
 										<dt>Citrus</dt>
-										<p id="citrus" style="font-size: 1rem"></p>
+										<p id="citrus" class="pinfo"></p>
 									</div>	
 								
 									<div onclick="text4()">
 										<dt>Water</dt>
-										<p id="water" style="font-size: 1rem"></p>
+										<p id="water" class="pinfo"></p>
 									</div>	
 										
 									<div onclick="text5()">		
 										<dt>Mossy</dt>
-										<p id="mossy" style="font-size: 1rem"></p>								
+										<p id="mossy" class="pinfo"></p>								
 									</div>
 									
 									<div onclick="text6()">		
 										<dt>Spicy</dt>
-										<p id="spicy" style="font-size: 1rem"></p>								
+										<p id="spicy" class="pinfo"></p>								
 									</div>
 									
 									</dl>
@@ -282,29 +293,29 @@ li {
 									
 									<h3>No.1</h3>
 									<div class="perfumelist">
-										<img onclick="tip1()"  src="images/santamaria.png" style="text-align: center; width:90%;">
-										<p id="comment1" style="text-align: left; font-size: 1.1rem;"></p>
+										<img class="listimg" onclick="tip1()"  src="images/santamaria.png">
+										<p id="comment1" class="comment"></p>
 									</div>
 									<br><br><br>
 									
 									<h3>No.2</h3>
 									<div class="perfumelist">
-										<img onclick="tip2()"  src="images/byredo.png" style="text-align: center; width:90%;">
-										<p id="comment2" style="text-align: left; font-size: 1.1rem;"></p>
+										<img class="listimg" onclick="tip2()"  src="images/byredo.png">
+										<p id="comment2" class="comment"></p>
 									</div>
 									<br><br>
 										
 									<h3>No.3</h3>
 									<div class="perfumelist">
-										<img onclick="tip3()"  src="images/jomalone.png" style="text-align: center; width:90%;">
-										<p id="comment3" style="text-align: left; font-size: 1.1rem;"></p>
+										<img class="listimg" onclick="tip3()"  src="images/jomalone.png">
+										<p id="comment3" class="comment"></p>
 									</div>
 									<br><br>
 									
 									<h3>No.4</h3>
 									<div class="perfumelist">
-										<img onclick="tip4()"  src="images/diptyque.png" style="text-align: center; width:90%;">
-										<p id="comment4" style="text-align: left; font-size: 1.1rem;"></p>
+										<img class="listimg" onclick="tip4()"  src="images/diptyque.png">
+										<p id="comment4" class="comment"></p>
 									</div>
 
 									<hr />
@@ -349,7 +360,7 @@ print 'It took ' + i + ' iterations to sort the deck.'; -->
 		}
 		
 		function text2(){
-			$('#green').html('풀이나 나뭇잎 또는 나뭇가지를 연상시키는 풋내와 숲의 상쾌함, 자연을 연상시키는 신선한 향이 특징이며<br> 사계절 구분 없이 잘 어울리는 향입니다.');
+			$('#green').html('풀이나 나뭇잎 또는 나뭇가지를 연상시키는 풋내와 숲의 상쾌함, 자연을 연상시키는 신선한 향이 특징이며 사계절 구분 없이 잘 어울리는 향입니다.');
 					 
 		}
 		function text3(){

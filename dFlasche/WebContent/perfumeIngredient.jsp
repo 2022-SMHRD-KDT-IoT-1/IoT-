@@ -126,7 +126,7 @@ label{
 			<%}else if(vo!=null && vo.getM_id().equals("admin")){ %>
 			
 			<li><a class="active" href="goBoardMain">Community</a></li>
-			<li><a class="active" href="goIngredientMain">향수원료Page</a></li>
+			<li><a class="active" href="goIngredientMain">Ingredient</a></li>
 			<li><a href="mypage.jsp">My Page</a></li>
 			<%}%>
 		</ul>
